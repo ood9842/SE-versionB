@@ -1,0 +1,14 @@
+C:\Users\chets\source\repos\versionB\versionB\bin\Debug\versionB.exe.config
+C:\Users\chets\source\repos\versionB\versionB\bin\Debug\versionB.exe
+C:\Users\chets\source\repos\versionB\versionB\bin\Debug\versionB.pdb
+C:\Users\chets\source\repos\versionB\versionB\obj\Debug\versionB.Form1.resources
+C:\Users\chets\source\repos\versionB\versionB\obj\Debug\versionB.Properties.Resources.resources
+C:\Users\chets\source\repos\versionB\versionB\obj\Debug\versionB.csproj.GenerateResource.cache
+C:\Users\chets\source\repos\versionB\versionB\obj\Debug\versionB.csproj.CoreCompileInputs.cache
+C:\Users\chets\source\repos\versionB\versionB\obj\Debug\versionB.exe
+C:\Users\chets\source\repos\versionB\versionB\obj\Debug\versionB.pdb
+C:\Users\chets\source\repos\versionB\versionB\bin\Debug\MetroFramework.Design.dll
+C:\Users\chets\source\repos\versionB\versionB\bin\Debug\MetroFramework.dll
+C:\Users\chets\source\repos\versionB\versionB\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\chets\source\repos\versionB\versionB\obj\Debug\versionB.csprojResolveAssemblyReference.cache
+C:\Users\chets\source\repos\versionB\versionB\obj\Debug\versionB.csproj.CopyComplete
