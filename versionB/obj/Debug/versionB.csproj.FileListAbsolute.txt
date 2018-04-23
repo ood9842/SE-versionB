@@ -26,3 +26,4 @@ C:\Users\chets\Documents\GitHub\SE-versionB\versionB\obj\Debug\versionB.csproj.C
 C:\Users\chets\Documents\GitHub\SE-versionB\versionB\obj\Debug\versionB.csproj.CopyComplete
 C:\Users\chets\Documents\GitHub\SE-versionB\versionB\obj\Debug\versionB.exe
 C:\Users\chets\Documents\GitHub\SE-versionB\versionB\obj\Debug\versionB.pdb
+C:\Users\chets\Documents\GitHub\SE-versionB\versionB\obj\Debug\versionB.Form2.resources
