@@ -27,3 +27,16 @@ C:\Users\chets\Documents\GitHub\SE-versionB\versionB\obj\Debug\versionB.csproj.C
 C:\Users\chets\Documents\GitHub\SE-versionB\versionB\obj\Debug\versionB.exe
 C:\Users\chets\Documents\GitHub\SE-versionB\versionB\obj\Debug\versionB.pdb
 C:\Users\chets\Documents\GitHub\SE-versionB\versionB\obj\Debug\versionB.Form2.resources
+I:\banana\SE-versionB\versionB\bin\Debug\versionB.exe.config
+I:\banana\SE-versionB\versionB\obj\Debug\versionB.exe
+I:\banana\SE-versionB\versionB\obj\Debug\versionB.pdb
+I:\banana\SE-versionB\versionB\bin\Debug\versionB.exe
+I:\banana\SE-versionB\versionB\bin\Debug\versionB.pdb
+I:\banana\SE-versionB\versionB\bin\Debug\MetroFramework.Design.dll
+I:\banana\SE-versionB\versionB\bin\Debug\MetroFramework.dll
+I:\banana\SE-versionB\versionB\bin\Debug\MetroFramework.Fonts.dll
+I:\banana\SE-versionB\versionB\obj\Debug\versionB.csprojResolveAssemblyReference.cache
+I:\banana\SE-versionB\versionB\obj\Debug\versionB.Form1.resources
+I:\banana\SE-versionB\versionB\obj\Debug\versionB.Form2.resources
+I:\banana\SE-versionB\versionB\obj\Debug\versionB.Properties.Resources.resources
+I:\banana\SE-versionB\versionB\obj\Debug\versionB.csproj.GenerateResource.Cache
