@@ -40,3 +40,5 @@ I:\banana\SE-versionB\versionB\obj\Debug\versionB.Form1.resources
 I:\banana\SE-versionB\versionB\obj\Debug\versionB.Form2.resources
 I:\banana\SE-versionB\versionB\obj\Debug\versionB.Properties.Resources.resources
 I:\banana\SE-versionB\versionB\obj\Debug\versionB.csproj.GenerateResource.Cache
+C:\Users\chets\Documents\GitHub\SE-versionB\versionB\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\chets\Documents\GitHub\SE-versionB\versionB\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml

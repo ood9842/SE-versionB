@@ -31,9 +31,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -60,11 +60,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Linen;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 450);
+            this.panel1.Size = new System.Drawing.Size(254, 282);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -82,6 +81,15 @@
             this.panel2.Size = new System.Drawing.Size(266, 343);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(49, 198);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(177, 40);
+            this.metroButton1.TabIndex = 3;
+            this.metroButton1.Text = "metroButton1";
+            this.metroButton1.UseSelectable = true;
             // 
             // label1
             // 
@@ -102,15 +110,6 @@
             this.textBox1.Size = new System.Drawing.Size(180, 20);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(49, 198);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(177, 40);
-            this.metroButton1.TabIndex = 3;
-            this.metroButton1.Text = "metroButton1";
-            this.metroButton1.UseSelectable = true;
             // 
             // label2
             // 

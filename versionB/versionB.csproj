@@ -61,6 +61,8 @@
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -89,18 +91,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControlFile.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlFile.Designer.cs">
-      <DependentUpon>UserControlFile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlHome.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlHome.Designer.cs">
-      <DependentUpon>UserControlHome.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,12 +106,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControlFile.resx">
-      <DependentUpon>UserControlFile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlHome.resx">
-      <DependentUpon>UserControlHome.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

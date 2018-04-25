@@ -42,5 +42,15 @@ namespace versionB
         {
 
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void rectangleShape1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
