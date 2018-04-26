@@ -26,7 +26,6 @@ namespace versionB
         private bool isReset = false; //check button
         private DataTable table; //table in dataGridview
         private SerialPort iSerialPort;
-        private int m_nType = -1;
         private int countDB = 0;
         private string epcS;
         private string timeS;
@@ -54,6 +53,9 @@ namespace versionB
         byte[] m_btAryBuffer = new byte[4096];
 
         int m_nLenth = 0;
+
+       
+        private int m_nType = -1;
 
         public Form2()
         {
@@ -95,7 +97,11 @@ namespace versionB
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            comboPort.SelectedIndex = 2;
+            comboBaudrate.SelectedIndex = 1;
 
+            iSerialPort = new SerialPort();
+            iSerialPort.DataReceived += new SerialDataReceivedEventHandler(ReceivedComData);
         }
 
         //home button
@@ -141,24 +147,24 @@ namespace versionB
                 DataRow r;
                 if (data.Equals(null) || data == "") return;
                 if (isReset) return;
-                //dataGridView1.Invoke(new Action(() =>
-                //{
-                //    r = table.NewRow();
-                //    r["epc"] = data;
-                //    r["time"] = time;
-                //    r["ant"] = ant;
-                //    table.Rows.InsertAt(r, 0);
-                //}));
+                dataGridView1.Invoke(new Action(() =>
+                {
+                    r = table.NewRow();
+                    r["epc"] = data;
+                    r["time"] = time;
+                    r["ant"] = ant;
+                    table.Rows.InsertAt(r, 0);
+                }));
 
-                r = table.NewRow();
+               /* r = table.NewRow();
                 r["epc"] = data;
                 r["time"] = time;
                 r["ant"] = ant;
-                table.Rows.InsertAt(r, 0); // test without hardware
+                table.Rows.InsertAt(r, 0); // test without hardware*/
 
                 countDB++;
-                //label30.Invoke(new Action(() => { label30.Text = "" + countDB; }));
-                label30.Text = "" + countDB; // test without hardware
+                label30.Invoke(new Action(() => { label30.Text = "" + countDB; }));
+               // label30.Text = "" + countDB; // test without hardware
                 sendLocal();
                 sendFile();
                 sendCloud();
@@ -314,7 +320,7 @@ namespace versionB
                 label2.Text = "SETTING";
                 return;
             }
-            
+
             if (start)
             {
                 start = false;
@@ -435,12 +441,136 @@ namespace versionB
             else
             {
                 sound = false;
-                button10.Text = "SOUND OFF";
+                button10.Text = "SOUND ON";
                 button10.Image = Resource1.ic_volume_up_white_18pt_2x;
                 //function here
             }
         }
 
+        private void buttonConnect_Click(object sender, EventArgs e)
+        {
+            string strException = string.Empty;
+            string strComPort = comboPort.Text;
+            int nBaudrate = Convert.ToInt32(comboBaudrate.Text);
+
+
+            string time = string.Format("{0}:{1}:{2}:{3}", DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
+
+            //updateDataGridView("010131353513513513", time, 1);
+            // reset.Enabled = true;
+
+            int nRet = OpenCom(strComPort, nBaudrate, out strException);
+            //Console.WriteLine(nRet+"");
+
+
+            if (strComPort == "COM15") nRet = 0;//ทดสอบที่com15
+
+            if (nRet != 0)
+            {
+                string strLog = "Connection failed, failure cause: " + strException;
+
+                MessageBox.Show(strLog);
+
+
+                return;
+            }
+            else
+            {
+                string strLog = "Connect" + strComPort + "@" + nBaudrate.ToString();
+
+                MessageBox.Show(strLog);
+                //buttonConnect.Enabled = true;
+
+                //comboBaudrate.Enabled = false;
+                //comboPort.Enabled = false;
+                //buttonConnect.BackColor = Color.Green;
+
+                //buttonConnect.Enabled = false;
+                //status1.ForeColor = Color.LimeGreen;
+                //status1.Text = "Connected";
+                return;
+            }
+        }
         
+
+        public int OpenCom(string strPort, int nBaudrate, out string strException)
+        {
+            strException = string.Empty;
+
+            if (iSerialPort.IsOpen)
+            {
+                iSerialPort.Close();
+            }
+
+            try
+            {
+                iSerialPort.PortName = strPort;
+                iSerialPort.BaudRate = nBaudrate;
+                iSerialPort.ReadTimeout = 200;
+                iSerialPort.Open();
+            }
+            catch (System.Exception ex)
+            {
+                strException = ex.Message;
+                return -1;
+            }
+
+            m_nType = 0;
+            return 0;
+        }
+        
+        public static string ByteArrayToString(byte[] btAryHex, int nIndex, int nLen)
+        {
+            if (nIndex + nLen > btAryHex.Length)
+            {
+                nLen = btAryHex.Length - nIndex;
+            }
+
+            string strResult = string.Empty;
+
+            for (int nloop = nIndex + 7; nloop < nIndex + nLen - 2; nloop++)
+            {
+                string strTemp = string.Format(" {0:X2}", btAryHex[nloop]);
+
+                strResult += strTemp;
+            }
+
+            //Console.Write(strResult);
+            //Console.WriteLine("");
+            return strResult;
+        }
+
+        private void ReceivedComData(object sender, SerialDataReceivedEventArgs e)
+        {
+
+            try
+            {
+                int nCount = iSerialPort.BytesToRead;
+                //label6.ForeColor = System.Drawing.Color.Green;
+                if (nCount == 0)
+                {
+                    return;
+                }
+
+                byte[] btAryBuffer = new byte[nCount];
+                iSerialPort.Read(btAryBuffer, 0, nCount);
+
+                string time = string.Format("{0}:{1}:{2}:{3}", DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
+
+                updateDataGridView(ByteArrayToString(btAryBuffer, 0, btAryBuffer.Length), time, 0);
+                Console.Write(ByteArrayToString(btAryBuffer, 0, btAryBuffer.Length));
+                Console.WriteLine("");
+                //RunReceiveDataCallback(btAryBuffer);
+                //label6.ForeColor = System.Drawing.Color.Black;
+            }
+            catch (System.Exception ex)
+
+            {
+
+            }
+        }
     }
+    
+
+
 }
