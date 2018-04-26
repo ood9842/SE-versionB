@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace versionB
 {
     public partial class Form1 : Form
     {
+        private Thread tesk;
         public Form1()
         {
             InitializeComponent();
@@ -21,20 +23,6 @@ namespace versionB
         private void Form1_Load(object sender, EventArgs e)
         {
             
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -47,9 +35,22 @@ namespace versionB
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        //login button
+        private void button2_Click(object sender, EventArgs e)
         {
+            tesk = new Thread(changeOtherForm);
+            this.Close();
+            tesk.Start();
+        }
+        private void changeOtherForm()
+        {
+            Application.Run(new Form2());
+        }
 
+        //exit button
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

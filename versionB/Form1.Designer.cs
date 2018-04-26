@@ -107,6 +107,7 @@
             this.button1.Size = new System.Drawing.Size(35, 35);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -121,7 +122,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(285, 343);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button2
             // 
@@ -136,6 +136,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Login";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -148,7 +149,6 @@
             this.label1.Size = new System.Drawing.Size(278, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "RFID reader 2.0";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
@@ -168,7 +168,6 @@
             this.label2.Size = new System.Drawing.Size(74, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "User name";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -180,7 +179,6 @@
             this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Password";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBox2
             // 

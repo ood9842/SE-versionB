@@ -118,6 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAATRJREFUWEft
+        180OwUAUBWCsPAUew9LSws8TEQ9iYW/Bkp0nwWPY1TnJ3KS3Rs1tO/1JnORLOqPtnKhgev/8EyNJkgxg
+        BRvYVWwLvHcfuJbyMQEsc4bYOcFHKTVw2L6uLEGtrwYOH5PkBr63vQzeU8K11Ppq4PAiCY9955SRe381
+        cDpfaAjTzFyeqIVY5govmLu5X6IW2oMktJS50Ax4IvHYd44YwR0kIaXMhazG8ADJr1LRC5GllLlQ+pFZ
+        HCCdb6V4roTH6nU1cNIXlI2vVPcLte6RFTGBJ0gq/VBbWcqQuZDli9FahsyFci/IqOWnw1KIP64XCC1D
+        UQtRq/5+FNH9Qtw3SVrxJ38NdWUBan01cLh5q2OjeISgjSLxxFhbad6T70zwVrpR3skmeSeb5J1sTtJ7
+        A5sWxQue4f6wAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAArYAAALmCAYAAAC3jdcbAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -462,17 +473,6 @@
         AADQN+kiAAD0TboIAAB9ky4CAEDfpIsAANA36SIAAPRNuggAAH2TLgIAQN+kiwAA0DfpIgAA9E26CAAA
         fZMuAgBA36SLAADQN+kiAAD0TboIAAB9ky4CAEDfpIsAANA36SIAAPRNuggAAH2TLgIAQN+kiwAA0Dfp
         IgAA9E26CAAA/XLysf8fWoOoPfKUf78AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAATRJREFUWEft
-        180OwUAUBWCsPAUew9LSws8TEQ9iYW/Bkp0nwWPY1TnJ3KS3Rs1tO/1JnORLOqPtnKhgev/8EyNJkgxg
-        BRvYVWwLvHcfuJbyMQEsc4bYOcFHKTVw2L6uLEGtrwYOH5PkBr63vQzeU8K11Ppq4PAiCY9955SRe381
-        cDpfaAjTzFyeqIVY5govmLu5X6IW2oMktJS50Ax4IvHYd44YwR0kIaXMhazG8ADJr1LRC5GllLlQ+pFZ
-        HCCdb6V4roTH6nU1cNIXlI2vVPcLte6RFTGBJ0gq/VBbWcqQuZDli9FahsyFci/IqOWnw1KIP64XCC1D
-        UQtRq/5+FNH9Qtw3SVrxJ38NdWUBan01cLh5q2OjeISgjSLxxFhbad6T70zwVrpR3skmeSeb5J1sTtJ7
-        A5sWxQue4f6wAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>
