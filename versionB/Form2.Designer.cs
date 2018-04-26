@@ -29,28 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Header = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.Work = new System.Windows.Forms.Panel();
-            this.Database = new System.Windows.Forms.Panel();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Setting = new System.Windows.Forms.Panel();
+            this.label46 = new System.Windows.Forms.Label();
+            this.buttonConnect = new System.Windows.Forms.Button();
+            this.label44 = new System.Windows.Forms.Label();
+            this.comboBaudrate = new System.Windows.Forms.ComboBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.comboPort = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button14 = new System.Windows.Forms.Button();
             this.label43 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboANTport = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboCheckpoint = new System.Windows.Forms.ComboBox();
             this.Home = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label31 = new System.Windows.Forms.Label();
@@ -93,6 +95,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
+            this.Database = new System.Windows.Forms.Panel();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Analyze = new System.Windows.Forms.Panel();
             this.label39 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -109,11 +115,11 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.Header.SuspendLayout();
             this.Work.SuspendLayout();
-            this.Database.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.Setting.SuspendLayout();
             this.Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Database.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.Analyze.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
@@ -148,7 +154,7 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(256, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -164,7 +170,7 @@
             this.Header.Location = new System.Drawing.Point(0, 0);
             this.Header.Margin = new System.Windows.Forms.Padding(0);
             this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(1024, 88);
+            this.Header.Size = new System.Drawing.Size(1024, 85);
             this.Header.TabIndex = 0;
             // 
             // label2
@@ -194,90 +200,130 @@
             // Work
             // 
             this.Work.Controls.Add(this.Home);
-            this.Work.Controls.Add(this.Database);
             this.Work.Controls.Add(this.Setting);
+            this.Work.Controls.Add(this.Database);
             this.Work.Controls.Add(this.Analyze);
-            this.Work.Location = new System.Drawing.Point(0, 88);
+            this.Work.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Work.Location = new System.Drawing.Point(0, 85);
             this.Work.Margin = new System.Windows.Forms.Padding(0);
             this.Work.Name = "Work";
-            this.Work.Size = new System.Drawing.Size(1024, 592);
+            this.Work.Size = new System.Drawing.Size(1024, 574);
             this.Work.TabIndex = 1;
-            // 
-            // Database
-            // 
-            this.Database.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            this.Database.Controls.Add(this.button12);
-            this.Database.Controls.Add(this.button11);
-            this.Database.Controls.Add(this.dataGridView2);
-            this.Database.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Database.Location = new System.Drawing.Point(0, 0);
-            this.Database.Margin = new System.Windows.Forms.Padding(0);
-            this.Database.Name = "Database";
-            this.Database.Size = new System.Drawing.Size(1024, 592);
-            this.Database.TabIndex = 2;
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button12.Location = new System.Drawing.Point(691, 10);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(151, 34);
-            this.button12.TabIndex = 2;
-            this.button12.Text = "PHP MYADMIN";
-            this.button12.UseVisualStyleBackColor = false;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
-            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button11.Location = new System.Drawing.Point(848, 10);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(173, 34);
-            this.button11.TabIndex = 1;
-            this.button11.Text = "CLEAR DATABASE";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(10, 50);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(10);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1002, 503);
-            this.dataGridView2.TabIndex = 0;
             // 
             // Setting
             // 
             this.Setting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            this.Setting.Controls.Add(this.label46);
+            this.Setting.Controls.Add(this.buttonConnect);
+            this.Setting.Controls.Add(this.label44);
+            this.Setting.Controls.Add(this.comboBaudrate);
+            this.Setting.Controls.Add(this.label45);
+            this.Setting.Controls.Add(this.comboPort);
             this.Setting.Controls.Add(this.checkBox1);
             this.Setting.Controls.Add(this.button14);
             this.Setting.Controls.Add(this.label43);
             this.Setting.Controls.Add(this.label42);
             this.Setting.Controls.Add(this.label41);
-            this.Setting.Controls.Add(this.comboBox2);
+            this.Setting.Controls.Add(this.comboANTport);
             this.Setting.Controls.Add(this.label40);
-            this.Setting.Controls.Add(this.comboBox1);
+            this.Setting.Controls.Add(this.comboCheckpoint);
             this.Setting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Setting.Location = new System.Drawing.Point(0, 0);
             this.Setting.Margin = new System.Windows.Forms.Padding(0);
             this.Setting.Name = "Setting";
-            this.Setting.Size = new System.Drawing.Size(1024, 592);
+            this.Setting.Size = new System.Drawing.Size(1024, 574);
             this.Setting.TabIndex = 3;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label46.Location = new System.Drawing.Point(147, 194);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(70, 20);
+            this.label46.TabIndex = 18;
+            this.label46.Text = "RS-232";
+            // 
+            // buttonConnect
+            // 
+            this.buttonConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
+            this.buttonConnect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(90)))));
+            this.buttonConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.buttonConnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.buttonConnect.Location = new System.Drawing.Point(262, 326);
+            this.buttonConnect.Name = "buttonConnect";
+            this.buttonConnect.Size = new System.Drawing.Size(184, 49);
+            this.buttonConnect.TabIndex = 17;
+            this.buttonConnect.Text = "CONNECTION";
+            this.buttonConnect.UseVisualStyleBackColor = false;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label44.Location = new System.Drawing.Point(187, 267);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(111, 20);
+            this.label44.TabIndex = 16;
+            this.label44.Text = "BAUDRATE:";
+            // 
+            // comboBaudrate
+            // 
+            this.comboBaudrate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBaudrate.FormattingEnabled = true;
+            this.comboBaudrate.Items.AddRange(new object[] {
+            "98600",
+            "115200"});
+            this.comboBaudrate.Location = new System.Drawing.Point(336, 267);
+            this.comboBaudrate.Name = "comboBaudrate";
+            this.comboBaudrate.Size = new System.Drawing.Size(161, 21);
+            this.comboBaudrate.TabIndex = 15;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label45.Location = new System.Drawing.Point(187, 225);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(131, 20);
+            this.label45.TabIndex = 14;
+            this.label45.Text = "SERIAL PORT:";
+            // 
+            // comboPort
+            // 
+            this.comboPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPort.FormattingEnabled = true;
+            this.comboPort.Items.AddRange(new object[] {
+            "COM1",
+            "COM2",
+            "COM3",
+            "COM4",
+            "COM5",
+            "COM6",
+            "COM7",
+            "COM8",
+            "COM9",
+            "COM10",
+            "COM11",
+            "COM12",
+            "COM13",
+            "COM14",
+            "COM15"});
+            this.comboPort.Location = new System.Drawing.Point(336, 224);
+            this.comboPort.Name = "comboPort";
+            this.comboPort.Size = new System.Drawing.Size(161, 21);
+            this.comboPort.TabIndex = 13;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.checkBox1.Location = new System.Drawing.Point(598, 287);
+            this.checkBox1.Location = new System.Drawing.Point(620, 282);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(173, 24);
             this.checkBox1.TabIndex = 12;
@@ -291,7 +337,7 @@
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button14.Location = new System.Drawing.Point(594, 336);
+            this.button14.Location = new System.Drawing.Point(616, 331);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(293, 49);
             this.button14.TabIndex = 11;
@@ -304,7 +350,7 @@
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label43.Location = new System.Drawing.Point(344, 82);
+            this.label43.Location = new System.Drawing.Point(332, 126);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(153, 20);
             this.label43.TabIndex = 5;
@@ -315,7 +361,7 @@
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label42.Location = new System.Drawing.Point(194, 82);
+            this.label42.Location = new System.Drawing.Point(182, 126);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(139, 20);
             this.label42.TabIndex = 4;
@@ -326,38 +372,48 @@
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label41.Location = new System.Drawing.Point(197, 193);
+            this.label41.Location = new System.Drawing.Point(612, 168);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(95, 20);
             this.label41.TabIndex = 3;
             this.label41.Text = "ANT PORT";
             // 
-            // comboBox2
+            // comboANTport
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(326, 192);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 2;
+            this.comboANTport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboANTport.FormattingEnabled = true;
+            this.comboANTport.Items.AddRange(new object[] {
+            "ANT1",
+            "ANT2",
+            "ANT3",
+            "ANT4",
+            "ANT5",
+            "ANT6",
+            "ANT7",
+            "ANT8"});
+            this.comboANTport.Location = new System.Drawing.Point(741, 167);
+            this.comboANTport.Name = "comboANTport";
+            this.comboANTport.Size = new System.Drawing.Size(121, 21);
+            this.comboANTport.TabIndex = 2;
             // 
             // label40
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label40.Location = new System.Drawing.Point(197, 150);
+            this.label40.Location = new System.Drawing.Point(612, 125);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(121, 20);
             this.label40.TabIndex = 1;
             this.label40.Text = "CHECKPOINT";
             // 
-            // comboBox1
+            // comboCheckpoint
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(326, 149);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.comboCheckpoint.FormattingEnabled = true;
+            this.comboCheckpoint.Location = new System.Drawing.Point(741, 124);
+            this.comboCheckpoint.Name = "comboCheckpoint";
+            this.comboCheckpoint.Size = new System.Drawing.Size(121, 21);
+            this.comboCheckpoint.TabIndex = 0;
             // 
             // Home
             // 
@@ -407,7 +463,7 @@
             this.Home.Location = new System.Drawing.Point(0, 0);
             this.Home.Margin = new System.Windows.Forms.Padding(0);
             this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(1024, 592);
+            this.Home.Size = new System.Drawing.Size(1024, 574);
             this.Home.TabIndex = 1;
             // 
             // progressBar1
@@ -445,25 +501,24 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label33.ForeColor = System.Drawing.Color.Lime;
+            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label33.Location = new System.Drawing.Point(841, 451);
             this.label33.Margin = new System.Windows.Forms.Padding(5);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(91, 15);
+            this.label33.Size = new System.Drawing.Size(114, 15);
             this.label33.TabIndex = 44;
-            this.label33.Text = "CONNECTED";
+            this.label33.Text = "DISCONNECTED";
             // 
             // label34
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label34.ForeColor = System.Drawing.Color.Lime;
             this.label34.Location = new System.Drawing.Point(841, 421);
             this.label34.Margin = new System.Windows.Forms.Padding(5);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(91, 15);
+            this.label34.Size = new System.Drawing.Size(114, 15);
             this.label34.TabIndex = 43;
-            this.label34.Text = "CONNECTED";
+            this.label34.Text = "DISCONNECTED";
             // 
             // label35
             // 
@@ -903,6 +958,57 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // Database
+            // 
+            this.Database.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            this.Database.Controls.Add(this.button12);
+            this.Database.Controls.Add(this.button11);
+            this.Database.Controls.Add(this.dataGridView2);
+            this.Database.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Database.Location = new System.Drawing.Point(0, 0);
+            this.Database.Margin = new System.Windows.Forms.Padding(0);
+            this.Database.Name = "Database";
+            this.Database.Size = new System.Drawing.Size(1024, 574);
+            this.Database.TabIndex = 2;
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
+            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.button12.Location = new System.Drawing.Point(691, 10);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(151, 34);
+            this.button12.TabIndex = 2;
+            this.button12.Text = "PHP MYADMIN";
+            this.button12.UseVisualStyleBackColor = false;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
+            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.button11.Location = new System.Drawing.Point(848, 10);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(173, 34);
+            this.button11.TabIndex = 1;
+            this.button11.Text = "CLEAR DATABASE";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(10, 50);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(10);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(1002, 503);
+            this.dataGridView2.TabIndex = 0;
+            // 
             // Analyze
             // 
             this.Analyze.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
@@ -913,7 +1019,7 @@
             this.Analyze.Location = new System.Drawing.Point(0, 0);
             this.Analyze.Margin = new System.Windows.Forms.Padding(0);
             this.Analyze.Name = "Analyze";
-            this.Analyze.Size = new System.Drawing.Size(1024, 592);
+            this.Analyze.Size = new System.Drawing.Size(1024, 574);
             this.Analyze.TabIndex = 3;
             // 
             // label39
@@ -937,20 +1043,20 @@
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(29, 61);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(677, 435);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1091,13 +1197,13 @@
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
             this.Work.ResumeLayout(false);
-            this.Database.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.Setting.ResumeLayout(false);
             this.Setting.PerformLayout();
             this.Home.ResumeLayout(false);
             this.Home.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Database.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.Analyze.ResumeLayout(false);
             this.Analyze.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -1134,9 +1240,9 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboANTport;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboCheckpoint;
         private System.Windows.Forms.Panel Database;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
@@ -1185,5 +1291,11 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.ComboBox comboBaudrate;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.ComboBox comboPort;
+        private System.Windows.Forms.Button buttonConnect;
+        private System.Windows.Forms.Label label46;
     }
 }

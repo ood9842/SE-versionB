@@ -302,12 +302,20 @@ namespace versionB
             }
 
         }
-
-        //start button
         private bool start = false;
         private void button6_Click(object sender, EventArgs e)//start button
         {
-            if(start)
+            //private bool start = false;
+            if (comboCheckpoint.Text == null | comboCheckpoint.Text == "")
+            {
+
+                MessageBox.Show("Choose CheckPoint,please");
+                panel_list[3].BringToFront();
+                label2.Text = "SETTING";
+                return;
+            }
+            
+            if (start)
             {
                 start = false;
                 button6.Text = "STOP";
@@ -321,8 +329,6 @@ namespace versionB
                 button6.BackColor = Color.FromArgb(221, 80, 68);
                 //start function here
                 string time = string.Format("{0}:{1}:{2}:{3}", DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
-
-                updateDataGridView("010131353513513513", time, 1);
             }
         }
 
@@ -434,5 +440,7 @@ namespace versionB
                 //function here
             }
         }
+
+        
     }
 }
