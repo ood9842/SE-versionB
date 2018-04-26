@@ -372,7 +372,6 @@
             this.Home.Name = "Home";
             this.Home.Size = new System.Drawing.Size(1024, 627);
             this.Home.TabIndex = 1;
-            this.Home.Paint += new System.Windows.Forms.PaintEventHandler(this.Home_Paint);
             // 
             // button5
             // 
@@ -1138,7 +1137,6 @@
             this.Work.Name = "Work";
             this.Work.Size = new System.Drawing.Size(1024, 627);
             this.Work.TabIndex = 1;
-            this.Work.Paint += new System.Windows.Forms.PaintEventHandler(this.Work_Paint);
             // 
             // button14
             // 

@@ -36,46 +36,6 @@ namespace versionB
 
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void rectangleShape1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Home_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Work_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         //home button
         private void button1_Click(object sender, EventArgs e)
         {
@@ -104,10 +64,10 @@ namespace versionB
             label2.Text = "SETTING";
         }
 
-        //exit app
+        //exit button
         private void button4_Click(object sender, EventArgs e)
         {
-        
+            this.Close();
         }
     }
 }
