@@ -64,3 +64,4 @@ D:\Work\SE-versionB\versionB\obj\Debug\versionB.pdb
 C:\Users\chets\Documents\GitHub\SE-versionB\versionB\bin\Debug\MySql.Data.xml
 C:\Users\chets\Documents\GitHub\SE-versionB\versionB\bin\Debug\MySql.Web.xml
 C:\Users\chets\Documents\GitHub\SE-versionB\versionB\obj\Debug\versionB.Resource1.resources
+D:\Work\SE-versionB\versionB\obj\Debug\versionB.Resource1.resources

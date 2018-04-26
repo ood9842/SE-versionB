@@ -69,6 +69,7 @@ namespace versionB
             table.Columns.Add(new DataColumn("epc", typeof(string)));
             table.Columns.Add(new DataColumn("time", typeof(string)));
             table.Columns.Add(new DataColumn("ant", typeof(string)));
+            table.Columns.Add(new DataColumn("bib", typeof(string)));
             dataGridView1.DataSource = table;
             var headers = dataGridView1.Columns.Cast<DataGridViewColumn>();
             sb.AppendLine(string.Join(",", headers.Select(column => "\"" + column.HeaderText + "\"").ToArray()) + ",\"" + "point" + "\"");
@@ -142,8 +143,36 @@ namespace versionB
 
         public void updateDataGridView(string data, string time, int ant)
         {
+            string bib;
+            if (databasecmd.connection.State == ConnectionState.Closed)
+            {
+                databasecmd.connectDB();
+            }
             try
             {
+                //String sql = "SELECT bib FROM tagbib WHERE epc = \"" + data + "\";";
+                String sql = "SELECT bib FROM `tagbib` WHERE epc =\""+data+"\" ";
+                Console.WriteLine("data:" + data);
+                databasecmd.cmd.CommandText = sql;
+                bib = (String)databasecmd.cmd.ExecuteScalar();
+                Console.WriteLine("bib:" + bib);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (databasecmd.connection.State == ConnectionState.Open)
+                {
+                    databasecmd.connection.Close();
+                }
+            }
+            try
+            {
+
+
+
                 DataRow r;
                 if (data.Equals(null) || data == "") return;
                 if (isReset) return;
@@ -153,6 +182,7 @@ namespace versionB
                     r["epc"] = data;
                     r["time"] = time;
                     r["ant"] = ant;
+                    r["bib"] = bib;
                     table.Rows.InsertAt(r, 0);
                 }));
 
