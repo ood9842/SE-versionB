@@ -303,12 +303,27 @@ namespace versionB
 
         }
 
+        //start button
+        private bool start = false;
         private void button6_Click(object sender, EventArgs e)//start button
         {
+            if(start)
+            {
+                start = false;
+                button6.Text = "STOP";
+                button6.BackColor = Color.FromArgb(33, 54, 82);
+                //stop function here
+            }
+            else
+            {
+                start = true;
+                button6.Text = "START";
+                button6.BackColor = Color.FromArgb(221, 80, 68);
+                //start function here
+                string time = string.Format("{0}:{1}:{2}:{3}", DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
 
-            string time = string.Format("{0}:{1}:{2}:{3}", DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
-
-            updateDataGridView("010131353513513513", time, 1);
+                updateDataGridView("010131353513513513", time, 1);
+            }
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -397,6 +412,26 @@ namespace versionB
                 {
                     databasecmd.connection.Close();
                 }
+            }
+        }
+
+        //sound button
+        private bool sound = true;
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (sound)
+            {
+                sound = false;
+                button10.Text = "SOUND OFF";
+                button10.Image = Resource1.ic_volume_off_white_18pt_2x;
+                //function here
+            }
+            else
+            {
+                sound = false;
+                button10.Text = "SOUND OFF";
+                button10.Image = Resource1.ic_volume_up_white_18pt_2x;
+                //function here
             }
         }
     }

@@ -29,15 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Header = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.Work = new System.Windows.Forms.Panel();
+            this.Database = new System.Windows.Forms.Panel();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Setting = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button14 = new System.Windows.Forms.Button();
@@ -47,10 +51,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label40 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.Database = new System.Windows.Forms.Panel();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Home = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label31 = new System.Windows.Forms.Label();
@@ -109,9 +109,9 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.Header.SuspendLayout();
             this.Work.SuspendLayout();
-            this.Setting.SuspendLayout();
             this.Database.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.Setting.SuspendLayout();
             this.Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Analyze.SuspendLayout();
@@ -148,7 +148,7 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(256, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -164,7 +164,7 @@
             this.Header.Location = new System.Drawing.Point(0, 0);
             this.Header.Margin = new System.Windows.Forms.Padding(0);
             this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(1024, 85);
+            this.Header.Size = new System.Drawing.Size(1024, 88);
             this.Header.TabIndex = 0;
             // 
             // label2
@@ -193,16 +193,66 @@
             // 
             // Work
             // 
+            this.Work.Controls.Add(this.Home);
             this.Work.Controls.Add(this.Database);
             this.Work.Controls.Add(this.Setting);
-            this.Work.Controls.Add(this.Home);
             this.Work.Controls.Add(this.Analyze);
-            this.Work.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Work.Location = new System.Drawing.Point(0, 85);
+            this.Work.Location = new System.Drawing.Point(0, 88);
             this.Work.Margin = new System.Windows.Forms.Padding(0);
             this.Work.Name = "Work";
-            this.Work.Size = new System.Drawing.Size(1024, 574);
+            this.Work.Size = new System.Drawing.Size(1024, 592);
             this.Work.TabIndex = 1;
+            // 
+            // Database
+            // 
+            this.Database.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            this.Database.Controls.Add(this.button12);
+            this.Database.Controls.Add(this.button11);
+            this.Database.Controls.Add(this.dataGridView2);
+            this.Database.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Database.Location = new System.Drawing.Point(0, 0);
+            this.Database.Margin = new System.Windows.Forms.Padding(0);
+            this.Database.Name = "Database";
+            this.Database.Size = new System.Drawing.Size(1024, 592);
+            this.Database.TabIndex = 2;
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
+            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.button12.Location = new System.Drawing.Point(691, 10);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(151, 34);
+            this.button12.TabIndex = 2;
+            this.button12.Text = "PHP MYADMIN";
+            this.button12.UseVisualStyleBackColor = false;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
+            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.button11.Location = new System.Drawing.Point(848, 10);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(173, 34);
+            this.button11.TabIndex = 1;
+            this.button11.Text = "CLEAR DATABASE";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(10, 50);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(10);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(1002, 503);
+            this.dataGridView2.TabIndex = 0;
             // 
             // Setting
             // 
@@ -219,7 +269,7 @@
             this.Setting.Location = new System.Drawing.Point(0, 0);
             this.Setting.Margin = new System.Windows.Forms.Padding(0);
             this.Setting.Name = "Setting";
-            this.Setting.Size = new System.Drawing.Size(1024, 574);
+            this.Setting.Size = new System.Drawing.Size(1024, 592);
             this.Setting.TabIndex = 3;
             // 
             // checkBox1
@@ -309,57 +359,6 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 0;
             // 
-            // Database
-            // 
-            this.Database.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            this.Database.Controls.Add(this.button12);
-            this.Database.Controls.Add(this.button11);
-            this.Database.Controls.Add(this.dataGridView2);
-            this.Database.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Database.Location = new System.Drawing.Point(0, 0);
-            this.Database.Margin = new System.Windows.Forms.Padding(0);
-            this.Database.Name = "Database";
-            this.Database.Size = new System.Drawing.Size(1024, 574);
-            this.Database.TabIndex = 2;
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button12.Location = new System.Drawing.Point(691, 10);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(151, 34);
-            this.button12.TabIndex = 2;
-            this.button12.Text = "PHP MYADMIN";
-            this.button12.UseVisualStyleBackColor = false;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
-            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button11.Location = new System.Drawing.Point(848, 10);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(173, 34);
-            this.button11.TabIndex = 1;
-            this.button11.Text = "CLEAR DATABASE";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(10, 50);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(10);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1002, 503);
-            this.dataGridView2.TabIndex = 0;
-            // 
             // Home
             // 
             this.Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
@@ -408,7 +407,7 @@
             this.Home.Location = new System.Drawing.Point(0, 0);
             this.Home.Margin = new System.Windows.Forms.Padding(0);
             this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(1024, 574);
+            this.Home.Size = new System.Drawing.Size(1024, 592);
             this.Home.TabIndex = 1;
             // 
             // progressBar1
@@ -641,6 +640,7 @@
             this.button10.Text = "SOUND   ON";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button6
             // 
@@ -913,7 +913,7 @@
             this.Analyze.Location = new System.Drawing.Point(0, 0);
             this.Analyze.Margin = new System.Windows.Forms.Padding(0);
             this.Analyze.Name = "Analyze";
-            this.Analyze.Size = new System.Drawing.Size(1024, 574);
+            this.Analyze.Size = new System.Drawing.Size(1024, 592);
             this.Analyze.TabIndex = 3;
             // 
             // label39
@@ -937,20 +937,20 @@
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(29, 61);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(677, 435);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1091,10 +1091,10 @@
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
             this.Work.ResumeLayout(false);
-            this.Setting.ResumeLayout(false);
-            this.Setting.PerformLayout();
             this.Database.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.Setting.ResumeLayout(false);
+            this.Setting.PerformLayout();
             this.Home.ResumeLayout(false);
             this.Home.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
