@@ -52,5 +52,15 @@ namespace versionB
         {
 
         }
+
+        private void Home_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Work_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
