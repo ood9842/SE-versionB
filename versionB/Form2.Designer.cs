@@ -38,26 +38,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.Work = new System.Windows.Forms.Panel();
-            this.Database = new System.Windows.Forms.Panel();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Setting = new System.Windows.Forms.Panel();
-            this.label46 = new System.Windows.Forms.Label();
-            this.buttonConnect = new System.Windows.Forms.Button();
-            this.label44 = new System.Windows.Forms.Label();
-            this.comboBaudrate = new System.Windows.Forms.ComboBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.comboPort = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button14 = new System.Windows.Forms.Button();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.comboANTport = new System.Windows.Forms.ComboBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.comboCheckpoint = new System.Windows.Forms.ComboBox();
+            this.Analyze = new System.Windows.Forms.Panel();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Home = new System.Windows.Forms.Panel();
+            this.label47 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -99,10 +90,26 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
-            this.Analyze = new System.Windows.Forms.Panel();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.Setting = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label46 = new System.Windows.Forms.Label();
+            this.buttonConnect = new System.Windows.Forms.Button();
+            this.label44 = new System.Windows.Forms.Label();
+            this.comboBaudrate = new System.Windows.Forms.ComboBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.comboPort = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.comboANTport = new System.Windows.Forms.ComboBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.comboCheckpoint = new System.Windows.Forms.ComboBox();
+            this.Database = new System.Windows.Forms.Panel();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Logo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -115,13 +122,15 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.Header.SuspendLayout();
             this.Work.SuspendLayout();
-            this.Database.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.Setting.SuspendLayout();
-            this.Home.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Analyze.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.Home.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Setting.SuspendLayout();
+            this.Database.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.Logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -199,10 +208,10 @@
             // 
             // Work
             // 
+            this.Work.Controls.Add(this.Analyze);
             this.Work.Controls.Add(this.Home);
             this.Work.Controls.Add(this.Setting);
             this.Work.Controls.Add(this.Database);
-            this.Work.Controls.Add(this.Analyze);
             this.Work.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Work.Location = new System.Drawing.Point(0, 85);
             this.Work.Margin = new System.Windows.Forms.Padding(0);
@@ -210,267 +219,67 @@
             this.Work.Size = new System.Drawing.Size(1024, 574);
             this.Work.TabIndex = 1;
             // 
-            // Database
+            // Analyze
             // 
-            this.Database.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            this.Database.Controls.Add(this.button12);
-            this.Database.Controls.Add(this.button11);
-            this.Database.Controls.Add(this.dataGridView2);
-            this.Database.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Database.Location = new System.Drawing.Point(0, 0);
-            this.Database.Margin = new System.Windows.Forms.Padding(0);
-            this.Database.Name = "Database";
-            this.Database.Size = new System.Drawing.Size(1024, 574);
-            this.Database.TabIndex = 2;
+            this.Analyze.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            this.Analyze.Controls.Add(this.label39);
+            this.Analyze.Controls.Add(this.label27);
+            this.Analyze.Controls.Add(this.chart1);
+            this.Analyze.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Analyze.Location = new System.Drawing.Point(0, 0);
+            this.Analyze.Margin = new System.Windows.Forms.Padding(0);
+            this.Analyze.Name = "Analyze";
+            this.Analyze.Size = new System.Drawing.Size(1024, 574);
+            this.Analyze.TabIndex = 3;
             // 
-            // button12
+            // label39
             // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button12.Location = new System.Drawing.Point(691, 10);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(151, 34);
-            this.button12.TabIndex = 2;
-            this.button12.Text = "PHP MYADMIN";
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click_1);
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(829, 81);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(13, 13);
+            this.label39.TabIndex = 2;
+            this.label39.Text = "0";
             // 
-            // button11
+            // label27
             // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
-            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button11.Location = new System.Drawing.Point(848, 10);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(173, 34);
-            this.button11.TabIndex = 1;
-            this.button11.Text = "CLEAR DATABASE";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(781, 80);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(46, 13);
+            this.label27.TabIndex = 1;
+            this.label27.Text = "average";
             // 
-            // dataGridView2
+            // chart1
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(10, 50);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(10);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1002, 503);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // Setting
-            // 
-            this.Setting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            this.Setting.Controls.Add(this.label46);
-            this.Setting.Controls.Add(this.buttonConnect);
-            this.Setting.Controls.Add(this.label44);
-            this.Setting.Controls.Add(this.comboBaudrate);
-            this.Setting.Controls.Add(this.label45);
-            this.Setting.Controls.Add(this.comboPort);
-            this.Setting.Controls.Add(this.checkBox1);
-            this.Setting.Controls.Add(this.button14);
-            this.Setting.Controls.Add(this.label43);
-            this.Setting.Controls.Add(this.label42);
-            this.Setting.Controls.Add(this.label41);
-            this.Setting.Controls.Add(this.comboANTport);
-            this.Setting.Controls.Add(this.label40);
-            this.Setting.Controls.Add(this.comboCheckpoint);
-            this.Setting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Setting.Location = new System.Drawing.Point(0, 0);
-            this.Setting.Margin = new System.Windows.Forms.Padding(0);
-            this.Setting.Name = "Setting";
-            this.Setting.Size = new System.Drawing.Size(1024, 574);
-            this.Setting.TabIndex = 3;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label46.Location = new System.Drawing.Point(147, 194);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(70, 20);
-            this.label46.TabIndex = 18;
-            this.label46.Text = "RS-232";
-            // 
-            // buttonConnect
-            // 
-            this.buttonConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
-            this.buttonConnect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(90)))));
-            this.buttonConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.buttonConnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.buttonConnect.Location = new System.Drawing.Point(262, 326);
-            this.buttonConnect.Name = "buttonConnect";
-            this.buttonConnect.Size = new System.Drawing.Size(184, 49);
-            this.buttonConnect.TabIndex = 17;
-            this.buttonConnect.Text = "CONNECTION";
-            this.buttonConnect.UseVisualStyleBackColor = false;
-            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label44.Location = new System.Drawing.Point(187, 267);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(111, 20);
-            this.label44.TabIndex = 16;
-            this.label44.Text = "BAUDRATE:";
-            // 
-            // comboBaudrate
-            // 
-            this.comboBaudrate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBaudrate.FormattingEnabled = true;
-            this.comboBaudrate.Items.AddRange(new object[] {
-            "98600",
-            "115200"});
-            this.comboBaudrate.Location = new System.Drawing.Point(336, 267);
-            this.comboBaudrate.Name = "comboBaudrate";
-            this.comboBaudrate.Size = new System.Drawing.Size(161, 21);
-            this.comboBaudrate.TabIndex = 15;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label45.Location = new System.Drawing.Point(187, 225);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(131, 20);
-            this.label45.TabIndex = 14;
-            this.label45.Text = "SERIAL PORT:";
-            // 
-            // comboPort
-            // 
-            this.comboPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboPort.FormattingEnabled = true;
-            this.comboPort.Items.AddRange(new object[] {
-            "COM1",
-            "COM2",
-            "COM3",
-            "COM4",
-            "COM5",
-            "COM6",
-            "COM7",
-            "COM8",
-            "COM9",
-            "COM10",
-            "COM11",
-            "COM12",
-            "COM13",
-            "COM14",
-            "COM15"});
-            this.comboPort.Location = new System.Drawing.Point(336, 224);
-            this.comboPort.Name = "comboPort";
-            this.comboPort.Size = new System.Drawing.Size(161, 21);
-            this.comboPort.TabIndex = 13;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.checkBox1.Location = new System.Drawing.Point(620, 282);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(173, 24);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "ADD TO SERVER";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
-            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(90)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button14.Location = new System.Drawing.Point(616, 331);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(293, 49);
-            this.button14.TabIndex = 11;
-            this.button14.Text = "CHECK SERVER CONNECTION";
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label43.Location = new System.Drawing.Point(332, 126);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(153, 20);
-            this.label43.TabIndex = 5;
-            this.label43.Text = "1AD22444OBEA8";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label42.Location = new System.Drawing.Point(182, 126);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(139, 20);
-            this.label42.TabIndex = 4;
-            this.label42.Text = "MAC ADDRESS";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label41.Location = new System.Drawing.Point(612, 168);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(95, 20);
-            this.label41.TabIndex = 3;
-            this.label41.Text = "ANT PORT";
-            // 
-            // comboANTport
-            // 
-            this.comboANTport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboANTport.FormattingEnabled = true;
-            this.comboANTport.Items.AddRange(new object[] {
-            "ANT1",
-            "ANT2",
-            "ANT3",
-            "ANT4",
-            "ANT5",
-            "ANT6",
-            "ANT7",
-            "ANT8"});
-            this.comboANTport.Location = new System.Drawing.Point(741, 167);
-            this.comboANTport.Name = "comboANTport";
-            this.comboANTport.Size = new System.Drawing.Size(121, 21);
-            this.comboANTport.TabIndex = 2;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label40.Location = new System.Drawing.Point(612, 125);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(121, 20);
-            this.label40.TabIndex = 1;
-            this.label40.Text = "CHECKPOINT";
-            // 
-            // comboCheckpoint
-            // 
-            this.comboCheckpoint.FormattingEnabled = true;
-            this.comboCheckpoint.Location = new System.Drawing.Point(741, 124);
-            this.comboCheckpoint.Name = "comboCheckpoint";
-            this.comboCheckpoint.Size = new System.Drawing.Size(121, 21);
-            this.comboCheckpoint.TabIndex = 0;
+            this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(29, 61);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            series1.Legend = "Legend1";
+            series1.Name = "Tag";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(677, 435);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
             // 
             // Home
             // 
             this.Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            this.Home.Controls.Add(this.label47);
+            this.Home.Controls.Add(this.numericUpDown2);
+            this.Home.Controls.Add(this.numericUpDown1);
+            this.Home.Controls.Add(this.radioButton3);
+            this.Home.Controls.Add(this.radioButton2);
+            this.Home.Controls.Add(this.radioButton1);
             this.Home.Controls.Add(this.progressBar1);
             this.Home.Controls.Add(this.label31);
             this.Home.Controls.Add(this.label32);
@@ -519,6 +328,68 @@
             this.Home.Size = new System.Drawing.Size(1024, 574);
             this.Home.TabIndex = 1;
             // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label47.Location = new System.Drawing.Point(580, 29);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(16, 13);
+            this.label47.TabIndex = 53;
+            this.label47.Text = "to";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(599, 25);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(60, 20);
+            this.numericUpDown2.TabIndex = 52;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(516, 24);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(60, 20);
+            this.numericUpDown1.TabIndex = 51;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.radioButton3.Location = new System.Drawing.Point(452, 27);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(57, 17);
+            this.radioButton3.TabIndex = 50;
+            this.radioButton3.Text = "By BIB";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.radioButton2.Location = new System.Drawing.Point(361, 27);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(66, 17);
+            this.radioButton2.TabIndex = 49;
+            this.radioButton2.Text = "By Rank";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.radioButton1.Location = new System.Drawing.Point(272, 27);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(63, 17);
+            this.radioButton1.TabIndex = 48;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "By Time";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(495, 511);
@@ -534,9 +405,9 @@
             this.label31.Location = new System.Drawing.Point(841, 511);
             this.label31.Margin = new System.Windows.Forms.Padding(5);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(95, 15);
+            this.label31.Size = new System.Drawing.Size(114, 15);
             this.label31.TabIndex = 46;
-            this.label31.Text = "DISCONNECT";
+            this.label31.Text = "DISCONNECTED";
             // 
             // label32
             // 
@@ -546,9 +417,9 @@
             this.label32.Location = new System.Drawing.Point(841, 481);
             this.label32.Margin = new System.Windows.Forms.Padding(5);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(95, 15);
+            this.label32.Size = new System.Drawing.Size(114, 15);
             this.label32.TabIndex = 45;
-            this.label32.Text = "DISCONNECT";
+            this.label32.Text = "DISCONNECTED";
             // 
             // label33
             // 
@@ -566,12 +437,13 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label34.Location = new System.Drawing.Point(841, 421);
             this.label34.Margin = new System.Windows.Forms.Padding(5);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(125, 15);
+            this.label34.Size = new System.Drawing.Size(114, 15);
             this.label34.TabIndex = 43;
-            this.label34.Text = "ReceivedComData";
+            this.label34.Text = "DISCONNECTED";
             // 
             // label35
             // 
@@ -850,7 +722,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label14.ForeColor = System.Drawing.Color.Lime;
+            this.label14.ForeColor = System.Drawing.Color.Silver;
             this.label14.Location = new System.Drawing.Point(114, 150);
             this.label14.Margin = new System.Windows.Forms.Padding(15, 4, 7, 15);
             this.label14.Name = "label14";
@@ -862,7 +734,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label13.ForeColor = System.Drawing.Color.Lime;
+            this.label13.ForeColor = System.Drawing.Color.Silver;
             this.label13.Location = new System.Drawing.Point(114, 126);
             this.label13.Margin = new System.Windows.Forms.Padding(15, 4, 7, 15);
             this.label13.Name = "label13";
@@ -874,7 +746,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label12.ForeColor = System.Drawing.Color.Lime;
+            this.label12.ForeColor = System.Drawing.Color.Silver;
             this.label12.Location = new System.Drawing.Point(114, 102);
             this.label12.Margin = new System.Windows.Forms.Padding(15, 4, 7, 15);
             this.label12.Name = "label12";
@@ -886,7 +758,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label11.ForeColor = System.Drawing.Color.Lime;
+            this.label11.ForeColor = System.Drawing.Color.DarkGray;
             this.label11.Location = new System.Drawing.Point(114, 74);
             this.label11.Margin = new System.Windows.Forms.Padding(15, 4, 7, 15);
             this.label11.Name = "label11";
@@ -946,7 +818,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label6.ForeColor = System.Drawing.Color.Lime;
+            this.label6.ForeColor = System.Drawing.Color.Silver;
             this.label6.Location = new System.Drawing.Point(52, 150);
             this.label6.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.label6.Name = "label6";
@@ -958,7 +830,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label5.ForeColor = System.Drawing.Color.Lime;
+            this.label5.ForeColor = System.Drawing.Color.Silver;
             this.label5.Location = new System.Drawing.Point(52, 126);
             this.label5.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.label5.Name = "label5";
@@ -970,7 +842,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label4.ForeColor = System.Drawing.Color.Lime;
+            this.label4.ForeColor = System.Drawing.Color.Silver;
             this.label4.Location = new System.Drawing.Point(52, 102);
             this.label4.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.label4.Name = "label4";
@@ -982,7 +854,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label3.ForeColor = System.Drawing.Color.Lime;
+            this.label3.ForeColor = System.Drawing.Color.DarkGray;
             this.label3.Location = new System.Drawing.Point(52, 74);
             this.label3.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.label3.Name = "label3";
@@ -1011,57 +883,283 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // Analyze
+            // Setting
             // 
-            this.Analyze.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            this.Analyze.Controls.Add(this.label39);
-            this.Analyze.Controls.Add(this.label27);
-            this.Analyze.Controls.Add(this.chart1);
-            this.Analyze.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Analyze.Location = new System.Drawing.Point(0, 0);
-            this.Analyze.Margin = new System.Windows.Forms.Padding(0);
-            this.Analyze.Name = "Analyze";
-            this.Analyze.Size = new System.Drawing.Size(1024, 574);
-            this.Analyze.TabIndex = 3;
+            this.Setting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            this.Setting.Controls.Add(this.button7);
+            this.Setting.Controls.Add(this.label46);
+            this.Setting.Controls.Add(this.buttonConnect);
+            this.Setting.Controls.Add(this.label44);
+            this.Setting.Controls.Add(this.comboBaudrate);
+            this.Setting.Controls.Add(this.label45);
+            this.Setting.Controls.Add(this.comboPort);
+            this.Setting.Controls.Add(this.checkBox1);
+            this.Setting.Controls.Add(this.button14);
+            this.Setting.Controls.Add(this.label43);
+            this.Setting.Controls.Add(this.label42);
+            this.Setting.Controls.Add(this.label41);
+            this.Setting.Controls.Add(this.comboANTport);
+            this.Setting.Controls.Add(this.label40);
+            this.Setting.Controls.Add(this.comboCheckpoint);
+            this.Setting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Setting.Location = new System.Drawing.Point(0, 0);
+            this.Setting.Margin = new System.Windows.Forms.Padding(0);
+            this.Setting.Name = "Setting";
+            this.Setting.Size = new System.Drawing.Size(1024, 574);
+            this.Setting.TabIndex = 3;
             // 
-            // label39
+            // button7
             // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(829, 81);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(13, 13);
-            this.label39.TabIndex = 2;
-            this.label39.Text = "0";
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(90)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.button7.Location = new System.Drawing.Point(440, 464);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(184, 49);
+            this.button7.TabIndex = 20;
+            this.button7.Text = "UPDATE";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // label27
+            // label46
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(781, 80);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(46, 13);
-            this.label27.TabIndex = 1;
-            this.label27.Text = "average";
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label46.Location = new System.Drawing.Point(147, 194);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(70, 20);
+            this.label46.TabIndex = 18;
+            this.label46.Text = "RS-232";
             // 
-            // chart1
+            // buttonConnect
             // 
-            this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(29, 61);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(677, 435);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.buttonConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
+            this.buttonConnect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(90)))));
+            this.buttonConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.buttonConnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.buttonConnect.Location = new System.Drawing.Point(325, 301);
+            this.buttonConnect.Name = "buttonConnect";
+            this.buttonConnect.Size = new System.Drawing.Size(184, 49);
+            this.buttonConnect.TabIndex = 17;
+            this.buttonConnect.Text = "CONNECT";
+            this.buttonConnect.UseVisualStyleBackColor = false;
+            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label44.Location = new System.Drawing.Point(187, 267);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(111, 20);
+            this.label44.TabIndex = 16;
+            this.label44.Text = "BAUDRATE:";
+            // 
+            // comboBaudrate
+            // 
+            this.comboBaudrate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBaudrate.FormattingEnabled = true;
+            this.comboBaudrate.Items.AddRange(new object[] {
+            "98600",
+            "115200"});
+            this.comboBaudrate.Location = new System.Drawing.Point(336, 267);
+            this.comboBaudrate.Name = "comboBaudrate";
+            this.comboBaudrate.Size = new System.Drawing.Size(161, 21);
+            this.comboBaudrate.TabIndex = 15;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label45.Location = new System.Drawing.Point(187, 225);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(131, 20);
+            this.label45.TabIndex = 14;
+            this.label45.Text = "SERIAL PORT:";
+            // 
+            // comboPort
+            // 
+            this.comboPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPort.FormattingEnabled = true;
+            this.comboPort.Items.AddRange(new object[] {
+            "COM1",
+            "COM2",
+            "COM3",
+            "COM4",
+            "COM5",
+            "COM6",
+            "COM7",
+            "COM8",
+            "COM9",
+            "COM10",
+            "COM11",
+            "COM12",
+            "COM13",
+            "COM14",
+            "COM15"});
+            this.comboPort.Location = new System.Drawing.Point(336, 224);
+            this.comboPort.Name = "comboPort";
+            this.comboPort.Size = new System.Drawing.Size(161, 21);
+            this.comboPort.TabIndex = 13;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.checkBox1.Location = new System.Drawing.Point(620, 282);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(173, 24);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "ADD TO SERVER";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
+            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(90)))));
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.button14.Location = new System.Drawing.Point(616, 331);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(293, 49);
+            this.button14.TabIndex = 11;
+            this.button14.Text = "CHECK SERVER CONNECTION";
+            this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label43.Location = new System.Drawing.Point(332, 126);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(153, 20);
+            this.label43.TabIndex = 5;
+            this.label43.Text = "1AD22444OBEA8";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label42.Location = new System.Drawing.Point(182, 126);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(139, 20);
+            this.label42.TabIndex = 4;
+            this.label42.Text = "MAC ADDRESS";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label41.Location = new System.Drawing.Point(612, 168);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(95, 20);
+            this.label41.TabIndex = 3;
+            this.label41.Text = "ANT PORT";
+            // 
+            // comboANTport
+            // 
+            this.comboANTport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboANTport.FormattingEnabled = true;
+            this.comboANTport.Items.AddRange(new object[] {
+            "ANT1",
+            "ANT2",
+            "ANT3",
+            "ANT4",
+            "ANT5",
+            "ANT6",
+            "ANT7",
+            "ANT8"});
+            this.comboANTport.Location = new System.Drawing.Point(741, 167);
+            this.comboANTport.Name = "comboANTport";
+            this.comboANTport.Size = new System.Drawing.Size(121, 21);
+            this.comboANTport.TabIndex = 2;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label40.Location = new System.Drawing.Point(612, 125);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(121, 20);
+            this.label40.TabIndex = 1;
+            this.label40.Text = "CHECKPOINT";
+            // 
+            // comboCheckpoint
+            // 
+            this.comboCheckpoint.FormattingEnabled = true;
+            this.comboCheckpoint.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C"});
+            this.comboCheckpoint.Location = new System.Drawing.Point(741, 124);
+            this.comboCheckpoint.Name = "comboCheckpoint";
+            this.comboCheckpoint.Size = new System.Drawing.Size(121, 21);
+            this.comboCheckpoint.TabIndex = 0;
+            // 
+            // Database
+            // 
+            this.Database.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            this.Database.Controls.Add(this.button12);
+            this.Database.Controls.Add(this.button11);
+            this.Database.Controls.Add(this.dataGridView2);
+            this.Database.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Database.Location = new System.Drawing.Point(0, 0);
+            this.Database.Margin = new System.Windows.Forms.Padding(0);
+            this.Database.Name = "Database";
+            this.Database.Size = new System.Drawing.Size(1024, 574);
+            this.Database.TabIndex = 2;
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
+            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.button12.Location = new System.Drawing.Point(691, 10);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(151, 34);
+            this.button12.TabIndex = 2;
+            this.button12.Text = "PHP MYADMIN";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click_1);
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
+            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.button11.Location = new System.Drawing.Point(848, 10);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(173, 34);
+            this.button11.TabIndex = 1;
+            this.button11.Text = "CLEAR DATABASE";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(10, 50);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(10);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(1002, 503);
+            this.dataGridView2.TabIndex = 0;
             // 
             // tableLayoutPanel3
             // 
@@ -1199,16 +1297,18 @@
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
             this.Work.ResumeLayout(false);
-            this.Database.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.Setting.ResumeLayout(false);
-            this.Setting.PerformLayout();
-            this.Home.ResumeLayout(false);
-            this.Home.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.Analyze.ResumeLayout(false);
             this.Analyze.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.Home.ResumeLayout(false);
+            this.Home.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Setting.ResumeLayout(false);
+            this.Setting.PerformLayout();
+            this.Database.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.Logo.ResumeLayout(false);
             this.Logo.PerformLayout();
@@ -1299,5 +1399,12 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button button7;
     }
 }

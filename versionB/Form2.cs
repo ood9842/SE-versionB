@@ -47,8 +47,9 @@ namespace versionB
 
         public SendDataCallback SendCallback;
 
+        Timer t = new Timer();
 
-
+       
 
         byte[] m_btAryBuffer = new byte[4096];
 
@@ -84,6 +85,11 @@ namespace versionB
             panel_list[0].BringToFront();
             label2.Text = "HOME";
             label43.Text = getMacAddress();
+
+            initChart();
+            t.Interval = 5000;
+            t.Enabled = true;
+            t.Tick += new System.EventHandler(OnTimerEvent);
         }
 
         public string getMacAddress()
@@ -144,6 +150,8 @@ namespace versionB
         public void updateDataGridView(string data, string time, int ant)
         {
             string bib;
+            Console.WriteLine();
+            if (data.Length < 36) return;
             if (databasecmd.connection.State == ConnectionState.Closed)
             {
                 databasecmd.connectDB();
@@ -194,6 +202,9 @@ namespace versionB
 
                 countDB++;
                 label30.Invoke(new Action(() => { label30.Text = "" + countDB; }));
+
+                //chart1.Invoke(new Action(() => { updateChart(time, countDB.ToString()); }));
+               
                // label30.Text = "" + countDB; // test without hardware
                 sendLocal();
                 sendFile();
@@ -219,10 +230,12 @@ namespace versionB
             sb.AppendLine(string.Join(",", cells.Select(cell => "\"" + cell.Value + "\"").ToArray()) + ",\"" + checkP + "\"");
             try
             {
+                  Updatestatus(321);
                 File.WriteAllText("D:\\demo.csv", sb.ToString(), Encoding.UTF8);
             }
             catch (Exception e)
             {
+                Updatestatus(322);
                 MessageBox.Show("File write error: " + e.Message);
             }
         }
@@ -242,10 +255,12 @@ namespace versionB
                     + dataGridView1.Rows[i].Cells["ant"].Value + ",\"" + checkP + "\"" + ");";
                 databasecmd.cmd.CommandText = StrQuery;
                 Console.WriteLine(StrQuery);
+              
                 databasecmd.cmd.ExecuteNonQuery();
             }
             catch (Exception)
             {
+               
                 throw;
             }
             finally
@@ -259,36 +274,44 @@ namespace versionB
 
         private void sendCloud() // send data to cloud
         {
-            if (checkServer == false) return;
-            List<DataValue> data = new List<DataValue>();
+            try {
+                if (checkServer == false) return;
+                List<DataValue> data = new List<DataValue>();
 
-            data.Add(new DataValue() { epc = "" + dataGridView1.Rows[0].Cells["epc"].Value, time = "" + dataGridView1.Rows[0].Cells["time"].Value, ant = "" + dataGridView1.Rows[0].Cells["ant"].Value, point = "" + checkP });
-
-
-
-            string jsonString = data.ToJSON();
-
-            Console.WriteLine(jsonString);
+                data.Add(new DataValue() { epc = "" + dataGridView1.Rows[0].Cells["epc"].Value, time = "" + dataGridView1.Rows[0].Cells["time"].Value, ant = "" + dataGridView1.Rows[0].Cells["ant"].Value, point = "" + checkP });
 
 
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://192.168.0.109/api/add.php");
-            httpWebRequest.ContentType = "application/json; charset=utf-8";
-            httpWebRequest.Method = "POST";
-            httpWebRequest.Accept = "application/json; charset=utf-8";
 
-            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-            {
-                streamWriter.Write(jsonString);
-                streamWriter.Flush();
-                streamWriter.Close();
+                string jsonString = data.ToJSON();
 
-                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                Console.WriteLine(jsonString);
+                Updatestatus(311);
+
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://192.168.0.109/api/add.php");
+                httpWebRequest.ContentType = "application/json; charset=utf-8";
+                httpWebRequest.Method = "POST";
+                httpWebRequest.Accept = "application/json; charset=utf-8";
+
+                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
-                    var result = streamReader.ReadToEnd();
-                    Console.WriteLine(result);
+                    streamWriter.Write(jsonString);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+
+                    var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                    using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        Console.WriteLine(result);
+                    }
                 }
+
             }
+            catch(Exception ex){
+                Updatestatus(312);
+                throw;
+            }
+            
         }
 
         private void checkDB() // compare data form cloud and localdatabase
@@ -323,10 +346,11 @@ namespace versionB
                     databasecmd.cmd.ExecuteNonQuery();
                 }
 
-
+                Updatestatus(331);
             }
             catch (Exception)
             {
+                Updatestatus(332);
                 throw;
             }
             finally
@@ -351,18 +375,19 @@ namespace versionB
                 return;
             }
 
-            if (start)
+            if (!start)
             {
-                start = false;
+                start = true;
                 button6.Text = "STOP";
-                button6.BackColor = Color.FromArgb(33, 54, 82);
+                button6.BackColor = Color.FromArgb(221, 80, 68);
+                
                 //stop function here
             }
             else
             {
-                start = true;
+                start = false;
                 button6.Text = "START";
-                button6.BackColor = Color.FromArgb(221, 80, 68);
+                button6.BackColor = Color.FromArgb(33, 220, 82);
                 //start function here
                 string time = string.Format("{0}:{1}:{2}:{3}", DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
             }
@@ -518,8 +543,11 @@ namespace versionB
             else
             {
                 string strLog = "Connect" + strComPort + "@" + nBaudrate.ToString();
-
+                label34.Text = "CONNECTED";
+                label34.ForeColor = System.Drawing.Color.Green;
+               
                 MessageBox.Show(strLog);
+               
                 //buttonConnect.Enabled = true;
 
                 //comboBaudrate.Enabled = false;
@@ -532,7 +560,13 @@ namespace versionB
                 return;
             }
         }
-        
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            panel_list[0].BringToFront();
+            label2.Text = "HOME";
+        }
+
 
         public int OpenCom(string strPort, int nBaudrate, out string strException)
         {
@@ -597,8 +631,13 @@ namespace versionB
                 iSerialPort.Read(btAryBuffer, 0, nCount);
 
                 string time = string.Format("{0}:{1}:{2}:{3}", DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
+                if (start) {
+                    updateDataGridView(ByteArrayToString(btAryBuffer, 0, btAryBuffer.Length), time, 0);
+                    UpdateAnt(time);
 
-                updateDataGridView(ByteArrayToString(btAryBuffer, 0, btAryBuffer.Length), time, 0);
+                }
+
+               
                 Console.Write(ByteArrayToString(btAryBuffer, 0, btAryBuffer.Length));
                 Console.WriteLine("");
                 //RunReceiveDataCallback(btAryBuffer);
@@ -614,6 +653,94 @@ namespace versionB
         private void button12_Click_1(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("http://localhost/phpmyadmin/sql.php?server=1&db=rfid&table=checkpoint&pos=0&token=ba4ca28d71e5d229ba74d02a152ae779");
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateAnt(string time)
+        {
+            label11.ForeColor = System.Drawing.Color.Lime;
+            label3.ForeColor = System.Drawing.Color.Lime;
+
+            label11.Invoke(new Action(() => { label11.Text = time; }));
+          
+        }
+        private void Updatestatus(int tcase)
+        {
+
+            switch (tcase)
+            {
+                case 311:
+                    label31.ForeColor = System.Drawing.Color.Green;
+                    label31.Invoke(new Action(() => { label31.Text = "CONNECTED"; }));
+                    break;
+                case 312:
+                    label31.ForeColor = Color.FromArgb(192, 0, 0);
+                    label31.Invoke(new Action(() => { label31.Text = "DISCONNECTED"; }));
+                    break;
+                case 321:
+                    label32.ForeColor = System.Drawing.Color.Green;
+                    label32.Invoke(new Action(() => { label32.Text = "CONNECTED"; }));
+                    break;
+                case 322:
+                    label32.ForeColor = Color.FromArgb(192, 0, 0);
+                    label32.Invoke(new Action(() => { label32.Text = "DISCONNECTED"; }));
+                    break;
+                case 331:
+                    label33.ForeColor = System.Drawing.Color.Green;
+                    label33.Invoke(new Action(() => { label33.Text = "CONNECTED"; }));
+                    break;
+                case 332:
+                    label33.ForeColor = Color.FromArgb(192, 0, 0);
+                    label33.Invoke(new Action(() => { label33.Text = "DISCONNECTED"; }));
+                    break;
+                case 341:
+                    label34.ForeColor = System.Drawing.Color.Green;
+                    label34.Invoke(new Action(() => { label34.Text = "CONNECTED"; }));
+                    break;
+                case 342:
+                    label34.ForeColor = Color.FromArgb(192, 0, 0);
+                    label34.Invoke(new Action(() => { label34.Text = "DISCONNECTED"; }));
+                    break;
+                default:
+                    Console.WriteLine("Default case");
+                    break;
+            }
+           
+
+        }
+
+        private void initChart()
+        {
+
+            // chart1.Series["Tag"].Points.AddXY("Ajay", "10000");
+            chart1.Series["Tag"].Points.AddXY(0, 0);
+            chart1.Titles.Add("Tag Count");
+        }
+        private void updateChart()
+        {
+
+            // chart1.Series["Tag"].Points.AddXY("Ajay", "10000");
+          
+           
+        }
+
+        private void OnTimerEvent(object source, EventArgs e)
+        {
+            chart1.Series["Tag"].Points.AddXY(string.Format("{0}:{1}:{2}:{3}", DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond), countDB);
         }
     }
     
