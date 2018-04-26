@@ -42,6 +42,21 @@
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Setting = new System.Windows.Forms.Panel();
+            this.label46 = new System.Windows.Forms.Label();
+            this.buttonConnect = new System.Windows.Forms.Button();
+            this.label44 = new System.Windows.Forms.Label();
+            this.comboBaudrate = new System.Windows.Forms.ComboBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.comboPort = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.comboANTport = new System.Windows.Forms.ComboBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.comboCheckpoint = new System.Windows.Forms.ComboBox();
             this.Home = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label31 = new System.Windows.Forms.Label();
@@ -84,21 +99,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
-            this.Setting = new System.Windows.Forms.Panel();
-            this.label46 = new System.Windows.Forms.Label();
-            this.buttonConnect = new System.Windows.Forms.Button();
-            this.label44 = new System.Windows.Forms.Label();
-            this.comboBaudrate = new System.Windows.Forms.ComboBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.comboPort = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button14 = new System.Windows.Forms.Button();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.comboANTport = new System.Windows.Forms.ComboBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.comboCheckpoint = new System.Windows.Forms.ComboBox();
             this.Analyze = new System.Windows.Forms.Panel();
             this.label39 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -117,9 +117,9 @@
             this.Work.SuspendLayout();
             this.Database.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.Setting.SuspendLayout();
             this.Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.Setting.SuspendLayout();
             this.Analyze.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
@@ -199,9 +199,9 @@
             // 
             // Work
             // 
-            this.Work.Controls.Add(this.Database);
-            this.Work.Controls.Add(this.Setting);
             this.Work.Controls.Add(this.Home);
+            this.Work.Controls.Add(this.Setting);
+            this.Work.Controls.Add(this.Database);
             this.Work.Controls.Add(this.Analyze);
             this.Work.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Work.Location = new System.Drawing.Point(0, 85);
@@ -261,6 +261,212 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(1002, 503);
             this.dataGridView2.TabIndex = 0;
+            // 
+            // Setting
+            // 
+            this.Setting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            this.Setting.Controls.Add(this.label46);
+            this.Setting.Controls.Add(this.buttonConnect);
+            this.Setting.Controls.Add(this.label44);
+            this.Setting.Controls.Add(this.comboBaudrate);
+            this.Setting.Controls.Add(this.label45);
+            this.Setting.Controls.Add(this.comboPort);
+            this.Setting.Controls.Add(this.checkBox1);
+            this.Setting.Controls.Add(this.button14);
+            this.Setting.Controls.Add(this.label43);
+            this.Setting.Controls.Add(this.label42);
+            this.Setting.Controls.Add(this.label41);
+            this.Setting.Controls.Add(this.comboANTport);
+            this.Setting.Controls.Add(this.label40);
+            this.Setting.Controls.Add(this.comboCheckpoint);
+            this.Setting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Setting.Location = new System.Drawing.Point(0, 0);
+            this.Setting.Margin = new System.Windows.Forms.Padding(0);
+            this.Setting.Name = "Setting";
+            this.Setting.Size = new System.Drawing.Size(1024, 574);
+            this.Setting.TabIndex = 3;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label46.Location = new System.Drawing.Point(147, 194);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(70, 20);
+            this.label46.TabIndex = 18;
+            this.label46.Text = "RS-232";
+            // 
+            // buttonConnect
+            // 
+            this.buttonConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
+            this.buttonConnect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(90)))));
+            this.buttonConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.buttonConnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.buttonConnect.Location = new System.Drawing.Point(262, 326);
+            this.buttonConnect.Name = "buttonConnect";
+            this.buttonConnect.Size = new System.Drawing.Size(184, 49);
+            this.buttonConnect.TabIndex = 17;
+            this.buttonConnect.Text = "CONNECTION";
+            this.buttonConnect.UseVisualStyleBackColor = false;
+            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label44.Location = new System.Drawing.Point(187, 267);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(111, 20);
+            this.label44.TabIndex = 16;
+            this.label44.Text = "BAUDRATE:";
+            // 
+            // comboBaudrate
+            // 
+            this.comboBaudrate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBaudrate.FormattingEnabled = true;
+            this.comboBaudrate.Items.AddRange(new object[] {
+            "98600",
+            "115200"});
+            this.comboBaudrate.Location = new System.Drawing.Point(336, 267);
+            this.comboBaudrate.Name = "comboBaudrate";
+            this.comboBaudrate.Size = new System.Drawing.Size(161, 21);
+            this.comboBaudrate.TabIndex = 15;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label45.Location = new System.Drawing.Point(187, 225);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(131, 20);
+            this.label45.TabIndex = 14;
+            this.label45.Text = "SERIAL PORT:";
+            // 
+            // comboPort
+            // 
+            this.comboPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPort.FormattingEnabled = true;
+            this.comboPort.Items.AddRange(new object[] {
+            "COM1",
+            "COM2",
+            "COM3",
+            "COM4",
+            "COM5",
+            "COM6",
+            "COM7",
+            "COM8",
+            "COM9",
+            "COM10",
+            "COM11",
+            "COM12",
+            "COM13",
+            "COM14",
+            "COM15"});
+            this.comboPort.Location = new System.Drawing.Point(336, 224);
+            this.comboPort.Name = "comboPort";
+            this.comboPort.Size = new System.Drawing.Size(161, 21);
+            this.comboPort.TabIndex = 13;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.checkBox1.Location = new System.Drawing.Point(620, 282);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(173, 24);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "ADD TO SERVER";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
+            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(90)))));
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.button14.Location = new System.Drawing.Point(616, 331);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(293, 49);
+            this.button14.TabIndex = 11;
+            this.button14.Text = "CHECK SERVER CONNECTION";
+            this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label43.Location = new System.Drawing.Point(332, 126);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(153, 20);
+            this.label43.TabIndex = 5;
+            this.label43.Text = "1AD22444OBEA8";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label42.Location = new System.Drawing.Point(182, 126);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(139, 20);
+            this.label42.TabIndex = 4;
+            this.label42.Text = "MAC ADDRESS";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label41.Location = new System.Drawing.Point(612, 168);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(95, 20);
+            this.label41.TabIndex = 3;
+            this.label41.Text = "ANT PORT";
+            // 
+            // comboANTport
+            // 
+            this.comboANTport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboANTport.FormattingEnabled = true;
+            this.comboANTport.Items.AddRange(new object[] {
+            "ANT1",
+            "ANT2",
+            "ANT3",
+            "ANT4",
+            "ANT5",
+            "ANT6",
+            "ANT7",
+            "ANT8"});
+            this.comboANTport.Location = new System.Drawing.Point(741, 167);
+            this.comboANTport.Name = "comboANTport";
+            this.comboANTport.Size = new System.Drawing.Size(121, 21);
+            this.comboANTport.TabIndex = 2;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.label40.Location = new System.Drawing.Point(612, 125);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(121, 20);
+            this.label40.TabIndex = 1;
+            this.label40.Text = "CHECKPOINT";
+            // 
+            // comboCheckpoint
+            // 
+            this.comboCheckpoint.FormattingEnabled = true;
+            this.comboCheckpoint.Location = new System.Drawing.Point(741, 124);
+            this.comboCheckpoint.Name = "comboCheckpoint";
+            this.comboCheckpoint.Size = new System.Drawing.Size(121, 21);
+            this.comboCheckpoint.TabIndex = 0;
             // 
             // Home
             // 
@@ -805,212 +1011,6 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // Setting
-            // 
-            this.Setting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            this.Setting.Controls.Add(this.label46);
-            this.Setting.Controls.Add(this.buttonConnect);
-            this.Setting.Controls.Add(this.label44);
-            this.Setting.Controls.Add(this.comboBaudrate);
-            this.Setting.Controls.Add(this.label45);
-            this.Setting.Controls.Add(this.comboPort);
-            this.Setting.Controls.Add(this.checkBox1);
-            this.Setting.Controls.Add(this.button14);
-            this.Setting.Controls.Add(this.label43);
-            this.Setting.Controls.Add(this.label42);
-            this.Setting.Controls.Add(this.label41);
-            this.Setting.Controls.Add(this.comboANTport);
-            this.Setting.Controls.Add(this.label40);
-            this.Setting.Controls.Add(this.comboCheckpoint);
-            this.Setting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Setting.Location = new System.Drawing.Point(0, 0);
-            this.Setting.Margin = new System.Windows.Forms.Padding(0);
-            this.Setting.Name = "Setting";
-            this.Setting.Size = new System.Drawing.Size(1024, 574);
-            this.Setting.TabIndex = 3;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label46.Location = new System.Drawing.Point(147, 194);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(70, 20);
-            this.label46.TabIndex = 18;
-            this.label46.Text = "RS-232";
-            // 
-            // buttonConnect
-            // 
-            this.buttonConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
-            this.buttonConnect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(90)))));
-            this.buttonConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.buttonConnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.buttonConnect.Location = new System.Drawing.Point(262, 326);
-            this.buttonConnect.Name = "buttonConnect";
-            this.buttonConnect.Size = new System.Drawing.Size(184, 49);
-            this.buttonConnect.TabIndex = 17;
-            this.buttonConnect.Text = "CONNECTION";
-            this.buttonConnect.UseVisualStyleBackColor = false;
-            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label44.Location = new System.Drawing.Point(187, 267);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(111, 20);
-            this.label44.TabIndex = 16;
-            this.label44.Text = "BAUDRATE:";
-            // 
-            // comboBaudrate
-            // 
-            this.comboBaudrate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBaudrate.FormattingEnabled = true;
-            this.comboBaudrate.Items.AddRange(new object[] {
-            "98600",
-            "115200"});
-            this.comboBaudrate.Location = new System.Drawing.Point(336, 267);
-            this.comboBaudrate.Name = "comboBaudrate";
-            this.comboBaudrate.Size = new System.Drawing.Size(161, 21);
-            this.comboBaudrate.TabIndex = 15;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label45.Location = new System.Drawing.Point(187, 225);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(131, 20);
-            this.label45.TabIndex = 14;
-            this.label45.Text = "SERIAL PORT:";
-            // 
-            // comboPort
-            // 
-            this.comboPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboPort.FormattingEnabled = true;
-            this.comboPort.Items.AddRange(new object[] {
-            "COM1",
-            "COM2",
-            "COM3",
-            "COM4",
-            "COM5",
-            "COM6",
-            "COM7",
-            "COM8",
-            "COM9",
-            "COM10",
-            "COM11",
-            "COM12",
-            "COM13",
-            "COM14",
-            "COM15"});
-            this.comboPort.Location = new System.Drawing.Point(336, 224);
-            this.comboPort.Name = "comboPort";
-            this.comboPort.Size = new System.Drawing.Size(161, 21);
-            this.comboPort.TabIndex = 13;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.checkBox1.Location = new System.Drawing.Point(620, 282);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(173, 24);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "ADD TO SERVER";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
-            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(90)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button14.Location = new System.Drawing.Point(616, 331);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(293, 49);
-            this.button14.TabIndex = 11;
-            this.button14.Text = "CHECK SERVER CONNECTION";
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label43.Location = new System.Drawing.Point(332, 126);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(153, 20);
-            this.label43.TabIndex = 5;
-            this.label43.Text = "1AD22444OBEA8";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label42.Location = new System.Drawing.Point(182, 126);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(139, 20);
-            this.label42.TabIndex = 4;
-            this.label42.Text = "MAC ADDRESS";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label41.Location = new System.Drawing.Point(612, 168);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(95, 20);
-            this.label41.TabIndex = 3;
-            this.label41.Text = "ANT PORT";
-            // 
-            // comboANTport
-            // 
-            this.comboANTport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboANTport.FormattingEnabled = true;
-            this.comboANTport.Items.AddRange(new object[] {
-            "ANT1",
-            "ANT2",
-            "ANT3",
-            "ANT4",
-            "ANT5",
-            "ANT6",
-            "ANT7",
-            "ANT8"});
-            this.comboANTport.Location = new System.Drawing.Point(741, 167);
-            this.comboANTport.Name = "comboANTport";
-            this.comboANTport.Size = new System.Drawing.Size(121, 21);
-            this.comboANTport.TabIndex = 2;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label40.Location = new System.Drawing.Point(612, 125);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(121, 20);
-            this.label40.TabIndex = 1;
-            this.label40.Text = "CHECKPOINT";
-            // 
-            // comboCheckpoint
-            // 
-            this.comboCheckpoint.FormattingEnabled = true;
-            this.comboCheckpoint.Location = new System.Drawing.Point(741, 124);
-            this.comboCheckpoint.Name = "comboCheckpoint";
-            this.comboCheckpoint.Size = new System.Drawing.Size(121, 21);
-            this.comboCheckpoint.TabIndex = 0;
-            // 
             // Analyze
             // 
             this.Analyze.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
@@ -1201,11 +1201,11 @@
             this.Work.ResumeLayout(false);
             this.Database.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.Setting.ResumeLayout(false);
+            this.Setting.PerformLayout();
             this.Home.ResumeLayout(false);
             this.Home.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.Setting.ResumeLayout(false);
-            this.Setting.PerformLayout();
             this.Analyze.ResumeLayout(false);
             this.Analyze.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
