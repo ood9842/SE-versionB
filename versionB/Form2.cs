@@ -432,29 +432,40 @@ namespace versionB
 
         private void button11_Click(object sender, EventArgs e) //clear db button
         {
-            if (databasecmd.connection.State == ConnectionState.Closed)
+
+            DialogResult dialogResult = MessageBox.Show("This action will delete all your data.", "Warning", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                databasecmd.connectDB();
-            }
-            try
-            {
-                int i = 0;
-                string StrQuery = @"TRUNCATE TABLE checkpoint";
-                databasecmd.cmd.CommandText = StrQuery;
-                Console.WriteLine(StrQuery);
-                databasecmd.cmd.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                if (databasecmd.connection.State == ConnectionState.Open)
+                if (databasecmd.connection.State == ConnectionState.Closed)
                 {
-                    databasecmd.connection.Close();
+                    databasecmd.connectDB();
                 }
+                try
+                {
+                    int i = 0;
+                    string StrQuery = @"TRUNCATE TABLE checkpoint";
+                    databasecmd.cmd.CommandText = StrQuery;
+                    Console.WriteLine(StrQuery);
+                    databasecmd.cmd.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    if (databasecmd.connection.State == ConnectionState.Open)
+                    {
+                        databasecmd.connection.Close();
+                    }
+                }
+                dataGridView2.DataSource = null;
             }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+            
         }
 
         //sound button
@@ -598,6 +609,11 @@ namespace versionB
             {
 
             }
+        }
+
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://localhost/phpmyadmin/sql.php?server=1&db=rfid&table=checkpoint&pos=0&token=ba4ca28d71e5d229ba74d02a152ae779");
         }
     }
     
