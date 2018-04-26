@@ -1,4 +1,5 @@
 ﻿using MockupV1;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.IO;
 using System.IO.Ports;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,6 +31,7 @@ namespace versionB
         private string epcS;
         private string timeS;
         private string checkP;
+        private bool checkServer = false;
 
         StringBuilder sb = new StringBuilder();
 
@@ -77,6 +80,17 @@ namespace versionB
             //strat home page first
             panel_list[0].BringToFront();
             label2.Text = "HOME";
+            label43.Text = getMacAddress();
+        }
+
+        public string getMacAddress()
+        {
+            String firstMacAddress = NetworkInterface
+            .GetAllNetworkInterfaces()
+            .Where(nic => nic.OperationalStatus == OperationalStatus.Up && nic.NetworkInterfaceType != NetworkInterfaceType.Loopback)
+            .Select(nic => nic.GetPhysicalAddress().ToString())
+            .FirstOrDefault();
+            return firstMacAddress;
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -96,6 +110,7 @@ namespace versionB
         {
             panel_list[1].BringToFront();
             label2.Text = "DATABASE";
+            showDB();
         }
 
         //analyze button
@@ -146,8 +161,8 @@ namespace versionB
                 label30.Text = "" + countDB; // test without hardware
                 sendLocal();
                 sendFile();
-                //sendCloud();
-                //checkDB();
+                sendCloud();
+                checkDB();
             }
 
             catch (InvalidOperationException exc)
@@ -208,6 +223,7 @@ namespace versionB
 
         private void sendCloud() // send data to cloud
         {
+            if (checkServer == false) return;
             List<DataValue> data = new List<DataValue>();
 
             data.Add(new DataValue() { epc = "" + dataGridView1.Rows[0].Cells["epc"].Value, time = "" + dataGridView1.Rows[0].Cells["time"].Value, ant = "" + dataGridView1.Rows[0].Cells["ant"].Value, point = "" + checkP });
@@ -241,6 +257,7 @@ namespace versionB
 
         private void checkDB() // compare data form cloud and localdatabase
         {
+            if (checkServer == false) return;
             Record dataValues = new Record();
             var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://192.168.0.109/api/get.php");
             httpWebRequest.ContentType = "application/json; charset=utf-8";
@@ -286,12 +303,101 @@ namespace versionB
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)//start button
         {
 
             string time = string.Format("{0}:{1}:{2}:{3}", DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
 
             updateDataGridView("010131353513513513", time, 1);
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                try
+                {
+                    HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create("http://192.168.0.109/api/get");
+                    myRequest.Timeout = 5000;
+                    HttpWebResponse response = (HttpWebResponse)myRequest.GetResponse();
+
+                    response = (HttpWebResponse)myRequest.GetResponse();
+
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+                        response.Close();
+                        checkServer = true;
+                        checkBox1.ForeColor = Color.Green;
+                        label31.Text = "CONNECTED";
+                        label31.ForeColor = Color.Green;
+                    }
+                    else
+                    {
+                        response.Close();
+                        checkServer = false;
+                        checkBox1.ForeColor = Color.Red;
+                    }
+                }
+                catch (Exception)
+                {
+                    checkServer = false;
+                    checkBox1.ForeColor = Color.Red;
+                }
+
+            }
+        }
+
+        private void showDB()
+        {
+            if (databasecmd.connection.State == ConnectionState.Closed)
+            {
+                databasecmd.connectDB();
+            }
+            try
+            {
+                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("select * from checkpoint", databasecmd.connection);
+                DataSet DS = new DataSet();
+                mySqlDataAdapter.Fill(DS);
+                dataGridView2.DataSource = DS.Tables[0];
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (databasecmd.connection.State == ConnectionState.Open)
+                {
+                    databasecmd.connection.Close();
+                }
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e) //clear db button
+        {
+            if (databasecmd.connection.State == ConnectionState.Closed)
+            {
+                databasecmd.connectDB();
+            }
+            try
+            {
+                int i = 0;
+                string StrQuery = @"TRUNCATE TABLE checkpoint";
+                databasecmd.cmd.CommandText = StrQuery;
+                Console.WriteLine(StrQuery);
+                databasecmd.cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (databasecmd.connection.State == ConnectionState.Open)
+                {
+                    databasecmd.connection.Close();
+                }
+            }
         }
     }
 }
