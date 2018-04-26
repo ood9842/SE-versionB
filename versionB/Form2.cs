@@ -18,7 +18,6 @@ namespace versionB
     public partial class Form2 : Form
     {
         private List<Panel> panel_list;
-        private int panel_index;
 
         private static ConnectDatabase databasecmd;
         private bool isStart = false; //check button
@@ -69,7 +68,6 @@ namespace versionB
             var headers = dataGridView1.Columns.Cast<DataGridViewColumn>();
             sb.AppendLine(string.Join(",", headers.Select(column => "\"" + column.HeaderText + "\"").ToArray()) + ",\"" + "point" + "\"");
 
-
             //panel control
             panel_list = new List<Panel>();
             panel_list.Add(Home);
@@ -79,7 +77,6 @@ namespace versionB
             //strat home page first
             panel_list[0].BringToFront();
             label2.Text = "HOME";
-            panel_index = 0; //no use
         }
 
         private void Form2_Load(object sender, EventArgs e)

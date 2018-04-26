@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Header = new System.Windows.Forms.Panel();
@@ -55,10 +55,8 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
@@ -89,8 +87,6 @@
             this.Setting = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button14 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
@@ -197,9 +193,9 @@
             // 
             // Work
             // 
-            this.Work.Controls.Add(this.Home);
-            this.Work.Controls.Add(this.Database);
             this.Work.Controls.Add(this.Setting);
+            this.Work.Controls.Add(this.Database);
+            this.Work.Controls.Add(this.Home);
             this.Work.Controls.Add(this.Analyze);
             this.Work.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Work.Location = new System.Drawing.Point(0, 88);
@@ -227,10 +223,8 @@
             this.Home.Controls.Add(this.label25);
             this.Home.Controls.Add(this.label24);
             this.Home.Controls.Add(this.label23);
-            this.Home.Controls.Add(this.button9);
             this.Home.Controls.Add(this.button8);
             this.Home.Controls.Add(this.label22);
-            this.Home.Controls.Add(this.button7);
             this.Home.Controls.Add(this.button10);
             this.Home.Controls.Add(this.button6);
             this.Home.Controls.Add(this.label21);
@@ -448,21 +442,6 @@
             this.label23.TabIndex = 31;
             this.label23.Text = "TAG READ COUNT";
             // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(90)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button9.Location = new System.Drawing.Point(576, 544);
-            this.button9.Margin = new System.Windows.Forms.Padding(8);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(136, 40);
-            this.button9.TabIndex = 30;
-            this.button9.Text = "SIMULATE";
-            this.button9.UseVisualStyleBackColor = false;
-            // 
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
@@ -488,21 +467,6 @@
             this.label22.Size = new System.Drawing.Size(210, 29);
             this.label22.TabIndex = 28;
             this.label22.Text = "PERFORMANCE";
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(54)))), ((int)(((byte)(82)))));
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(90)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button7.Location = new System.Drawing.Point(728, 544);
-            this.button7.Margin = new System.Windows.Forms.Padding(8);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(136, 40);
-            this.button7.TabIndex = 26;
-            this.button7.Text = "CLEAR DB";
-            this.button7.UseVisualStyleBackColor = false;
             // 
             // button10
             // 
@@ -821,7 +785,7 @@
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(173, 34);
             this.button11.TabIndex = 1;
-            this.button11.Text = "EXPORT TO EXCEL";
+            this.button11.Text = "CLEAR DATABASE";
             this.button11.UseVisualStyleBackColor = false;
             // 
             // dataGridView2
@@ -838,8 +802,6 @@
             this.Setting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
             this.Setting.Controls.Add(this.checkBox1);
             this.Setting.Controls.Add(this.button14);
-            this.Setting.Controls.Add(this.textBox1);
-            this.Setting.Controls.Add(this.label45);
             this.Setting.Controls.Add(this.label43);
             this.Setting.Controls.Add(this.label42);
             this.Setting.Controls.Add(this.label41);
@@ -858,11 +820,11 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.checkBox1.Location = new System.Drawing.Point(674, 324);
+            this.checkBox1.Location = new System.Drawing.Point(598, 287);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(205, 24);
+            this.checkBox1.Size = new System.Drawing.Size(173, 24);
             this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "ALL ADD IN SERVER";
+            this.checkBox1.Text = "ADD TO SERVER";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // button14
@@ -872,38 +834,19 @@
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.button14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button14.Location = new System.Drawing.Point(674, 373);
+            this.button14.Location = new System.Drawing.Point(594, 336);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(205, 48);
+            this.button14.Size = new System.Drawing.Size(293, 49);
             this.button14.TabIndex = 11;
-            this.button14.Text = "SIMULATE PUSH DB";
+            this.button14.Text = "CHECK SERVER CONNECTION";
             this.button14.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.textBox1.Location = new System.Drawing.Point(347, 249);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 21);
-            this.textBox1.TabIndex = 10;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label45.Location = new System.Drawing.Point(151, 250);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(180, 20);
-            this.label45.TabIndex = 9;
-            this.label45.Text = "AMOUT OF RUNNER";
             // 
             // label43
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label43.Location = new System.Drawing.Point(298, 61);
+            this.label43.Location = new System.Drawing.Point(344, 82);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(153, 20);
             this.label43.TabIndex = 5;
@@ -914,7 +857,7 @@
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label42.Location = new System.Drawing.Point(148, 61);
+            this.label42.Location = new System.Drawing.Point(194, 82);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(139, 20);
             this.label42.TabIndex = 4;
@@ -925,7 +868,7 @@
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label41.Location = new System.Drawing.Point(151, 172);
+            this.label41.Location = new System.Drawing.Point(197, 193);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(95, 20);
             this.label41.TabIndex = 3;
@@ -934,7 +877,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(280, 171);
+            this.comboBox2.Location = new System.Drawing.Point(326, 192);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 2;
@@ -944,7 +887,7 @@
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.label40.Location = new System.Drawing.Point(151, 129);
+            this.label40.Location = new System.Drawing.Point(197, 150);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(121, 20);
             this.label40.TabIndex = 1;
@@ -953,7 +896,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(280, 128);
+            this.comboBox1.Location = new System.Drawing.Point(326, 149);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 0;
@@ -992,20 +935,20 @@
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
             this.chart1.Location = new System.Drawing.Point(29, 61);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(677, 435);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -1186,8 +1129,6 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Panel Setting;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label41;
@@ -1215,10 +1156,8 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label21;

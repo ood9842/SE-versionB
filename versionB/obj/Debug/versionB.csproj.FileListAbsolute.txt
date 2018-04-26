@@ -61,3 +61,5 @@ D:\Work\SE-versionB\versionB\obj\Debug\versionB.csproj.GenerateResource.Cache
 D:\Work\SE-versionB\versionB\obj\Debug\versionB.csproj.CoreCompileInputs.cache
 D:\Work\SE-versionB\versionB\obj\Debug\versionB.exe
 D:\Work\SE-versionB\versionB\obj\Debug\versionB.pdb
+C:\Users\chets\Documents\GitHub\SE-versionB\versionB\bin\Debug\MySql.Data.xml
+C:\Users\chets\Documents\GitHub\SE-versionB\versionB\bin\Debug\MySql.Web.xml

@@ -23,6 +23,9 @@ namespace versionB
             this.StartPosition = FormStartPosition.CenterScreen;
             textBox2.PasswordChar = '*';
 
+            //register text box event
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnter);
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnter);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -38,6 +41,27 @@ namespace versionB
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        //login button
+        private void button2_Click(object sender, EventArgs e)
+        {
+            checkText();
+        }
+
+        //exit button
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //enter key event
+        private void CheckEnter(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                checkText();
+            }
         }
 
         private bool validate_login(string user, string pass)
@@ -61,9 +85,14 @@ namespace versionB
             }
         }
 
-        //login button
-        private void button2_Click(object sender, EventArgs e)
+        private void changeOtherForm()
         {
+            Application.Run(new Form2());
+        }
+
+        private void checkText()
+        {
+            //if(textBox1.Text == "admin" && textBox2.Text == "1234")
             if (validate_login(textBox1.Text, textBox2.Text))
             {
                 tesk = new Thread(changeOtherForm);
@@ -74,16 +103,6 @@ namespace versionB
             {
                 MessageBox.Show("invalid username or password");
             }
-        }
-        private void changeOtherForm()
-        {
-            Application.Run(new Form2());
-        }
-
-        //exit button
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
