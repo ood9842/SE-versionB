@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Header = new System.Windows.Forms.Panel();
@@ -39,13 +39,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.Work = new System.Windows.Forms.Panel();
             this.Analyze = new System.Windows.Forms.Panel();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Home = new System.Windows.Forms.Panel();
             this.label47 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -118,6 +114,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.Header.SuspendLayout();
@@ -125,8 +123,6 @@
             this.Analyze.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.Home.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Setting.SuspendLayout();
             this.Database.SuspendLayout();
@@ -163,7 +159,7 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(256, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -179,7 +175,7 @@
             this.Header.Location = new System.Drawing.Point(0, 0);
             this.Header.Margin = new System.Windows.Forms.Padding(0);
             this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(1024, 85);
+            this.Header.Size = new System.Drawing.Size(1024, 88);
             this.Header.TabIndex = 0;
             // 
             // label2
@@ -208,65 +204,47 @@
             // 
             // Work
             // 
-            this.Work.Controls.Add(this.Analyze);
             this.Work.Controls.Add(this.Home);
+            this.Work.Controls.Add(this.Analyze);
             this.Work.Controls.Add(this.Setting);
             this.Work.Controls.Add(this.Database);
             this.Work.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Work.Location = new System.Drawing.Point(0, 85);
+            this.Work.Location = new System.Drawing.Point(0, 88);
             this.Work.Margin = new System.Windows.Forms.Padding(0);
             this.Work.Name = "Work";
-            this.Work.Size = new System.Drawing.Size(1024, 574);
+            this.Work.Size = new System.Drawing.Size(1024, 592);
             this.Work.TabIndex = 1;
             // 
             // Analyze
             // 
             this.Analyze.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            this.Analyze.Controls.Add(this.label39);
-            this.Analyze.Controls.Add(this.label27);
             this.Analyze.Controls.Add(this.chart1);
             this.Analyze.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Analyze.Location = new System.Drawing.Point(0, 0);
             this.Analyze.Margin = new System.Windows.Forms.Padding(0);
             this.Analyze.Name = "Analyze";
-            this.Analyze.Size = new System.Drawing.Size(1024, 574);
+            this.Analyze.Size = new System.Drawing.Size(1024, 592);
             this.Analyze.TabIndex = 3;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(829, 81);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(13, 13);
-            this.label39.TabIndex = 2;
-            this.label39.Text = "0";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(781, 80);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(46, 13);
-            this.label27.TabIndex = 1;
-            this.label27.Text = "average";
             // 
             // chart1
             // 
-            this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            this.chart1.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.DashedUpwardDiagonal;
+            chartArea5.BackColor = System.Drawing.Color.White;
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(29, 61);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            series1.Legend = "Legend1";
-            series1.Name = "Tag";
-            this.chart1.Series.Add(series1);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            series5.Legend = "Legend1";
+            series5.Name = "Tag";
+            this.chart1.Series.Add(series5);
             this.chart1.Size = new System.Drawing.Size(677, 435);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -274,9 +252,9 @@
             // Home
             // 
             this.Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            this.Home.Controls.Add(this.textBox2);
+            this.Home.Controls.Add(this.textBox1);
             this.Home.Controls.Add(this.label47);
-            this.Home.Controls.Add(this.numericUpDown2);
-            this.Home.Controls.Add(this.numericUpDown1);
             this.Home.Controls.Add(this.radioButton3);
             this.Home.Controls.Add(this.radioButton2);
             this.Home.Controls.Add(this.radioButton1);
@@ -325,7 +303,7 @@
             this.Home.Location = new System.Drawing.Point(0, 0);
             this.Home.Margin = new System.Windows.Forms.Padding(0);
             this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(1024, 574);
+            this.Home.Size = new System.Drawing.Size(1024, 592);
             this.Home.TabIndex = 1;
             // 
             // label47
@@ -337,20 +315,6 @@
             this.label47.Size = new System.Drawing.Size(16, 13);
             this.label47.TabIndex = 53;
             this.label47.Text = "to";
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(599, 25);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(60, 20);
-            this.numericUpDown2.TabIndex = 52;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(516, 24);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(60, 20);
-            this.numericUpDown1.TabIndex = 51;
             // 
             // radioButton3
             // 
@@ -591,6 +555,7 @@
             this.button8.TabIndex = 29;
             this.button8.Text = "RESET";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label22
             // 
@@ -905,7 +870,7 @@
             this.Setting.Location = new System.Drawing.Point(0, 0);
             this.Setting.Margin = new System.Windows.Forms.Padding(0);
             this.Setting.Name = "Setting";
-            this.Setting.Size = new System.Drawing.Size(1024, 574);
+            this.Setting.Size = new System.Drawing.Size(1024, 592);
             this.Setting.TabIndex = 3;
             // 
             // button7
@@ -1119,7 +1084,7 @@
             this.Database.Location = new System.Drawing.Point(0, 0);
             this.Database.Margin = new System.Windows.Forms.Padding(0);
             this.Database.Name = "Database";
-            this.Database.Size = new System.Drawing.Size(1024, 574);
+            this.Database.Size = new System.Drawing.Size(1024, 592);
             this.Database.TabIndex = 2;
             // 
             // button12
@@ -1282,6 +1247,22 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(516, 24);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(58, 20);
+            this.textBox1.TabIndex = 54;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(602, 24);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(58, 20);
+            this.textBox2.TabIndex = 55;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1298,12 +1279,9 @@
             this.Header.PerformLayout();
             this.Work.ResumeLayout(false);
             this.Analyze.ResumeLayout(false);
-            this.Analyze.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.Home.ResumeLayout(false);
             this.Home.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.Setting.ResumeLayout(false);
             this.Setting.PerformLayout();
@@ -1335,8 +1313,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel Work;
         private System.Windows.Forms.Panel Analyze;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Panel Setting;
         private System.Windows.Forms.Label label43;
@@ -1403,8 +1379,8 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

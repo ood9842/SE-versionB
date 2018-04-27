@@ -72,8 +72,18 @@ namespace versionB
             table.Columns.Add(new DataColumn("ant", typeof(string)));
             table.Columns.Add(new DataColumn("bib", typeof(string)));
             dataGridView1.DataSource = table;
+            dataGridView1.Columns[0].Width = 300;
+            dataGridView1.Columns[1].Width = 120;
+            dataGridView1.Columns[2].Width = 100;
+            dataGridView1.Columns[3].Width = dataGridView1.Width - dataGridView1.Columns[0].Width - dataGridView1.Columns[1].Width - dataGridView1.Columns[2].Width;
+
             var headers = dataGridView1.Columns.Cast<DataGridViewColumn>();
+          
+     //       dataGridView1.Columns[2].Width = 100;
+       //     dataGridView1.Columns[3].Width = dataGridView1.Width - dataGridView1.Columns[0].Width - dataGridView1.Columns[1].Width - dataGridView1.Columns[2].Width;
+          //  dataGridView1.DataSource = table;
             sb.AppendLine(string.Join(",", headers.Select(column => "\"" + column.HeaderText + "\"").ToArray()) + ",\"" + "point" + "\"");
+            
 
             //panel control
             panel_list = new List<Panel>();
@@ -106,6 +116,7 @@ namespace versionB
         {
             comboPort.SelectedIndex = 2;
             comboBaudrate.SelectedIndex = 1;
+            comboANTport.SelectedIndex = 0;
 
             iSerialPort = new SerialPort();
             iSerialPort.DataReceived += new SerialDataReceivedEventHandler(ReceivedComData);
@@ -151,7 +162,7 @@ namespace versionB
         {
             string bib;
             Console.WriteLine();
-            if (data.Length < 36) return;
+            if (data.Length != 36 ) return;
             if (databasecmd.connection.State == ConnectionState.Closed)
             {
                 databasecmd.connectDB();
@@ -257,10 +268,12 @@ namespace versionB
                 Console.WriteLine(StrQuery);
               
                 databasecmd.cmd.ExecuteNonQuery();
+                Updatestatus(331);
+
             }
             catch (Exception)
             {
-               
+                Updatestatus(332);
                 throw;
             }
             finally
@@ -287,7 +300,7 @@ namespace versionB
                 Console.WriteLine(jsonString);
                 Updatestatus(311);
 
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://192.168.0.109/api/add.php");
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://10.10.186.197/api/add.php");
                 httpWebRequest.ContentType = "application/json; charset=utf-8";
                 httpWebRequest.Method = "POST";
                 httpWebRequest.Accept = "application/json; charset=utf-8";
@@ -318,7 +331,7 @@ namespace versionB
         {
             if (checkServer == false) return;
             Record dataValues = new Record();
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://192.168.0.109/api/get.php");
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://10.10.186.197/api/get.php");
             httpWebRequest.ContentType = "application/json; charset=utf-8";
             httpWebRequest.Method = "GET";
             httpWebRequest.Accept = "application/json; charset=utf-8";
@@ -399,7 +412,7 @@ namespace versionB
             {
                 try
                 {
-                    HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create("http://192.168.0.109/api/get");
+                    HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create("http://10.10.186.197/api/get.php");
                     myRequest.Timeout = 5000;
                     HttpWebResponse response = (HttpWebResponse)myRequest.GetResponse();
 
@@ -441,6 +454,11 @@ namespace versionB
                 DataSet DS = new DataSet();
                 mySqlDataAdapter.Fill(DS);
                 dataGridView2.DataSource = DS.Tables[0];
+                dataGridView2.DataSource = DS.Tables[0];
+                dataGridView2.Columns[0].Width = 50;
+                dataGridView2.Columns[1].Width = 370;
+                dataGridView2.Columns[2].Width = 250;
+                dataGridView2.Columns[3].Width = dataGridView2.Width - dataGridView2.Columns[0].Width - dataGridView2.Columns[1].Width - dataGridView2.Columns[2].Width;
             }
             catch (Exception)
             {
@@ -475,6 +493,7 @@ namespace versionB
                 }
                 catch (Exception)
                 {
+                    MessageBox.Show("Error : please stop reading");
                     throw;
                 }
                 finally
@@ -506,7 +525,7 @@ namespace versionB
             }
             else
             {
-                sound = false;
+                sound = true;
                 button10.Text = "SOUND ON";
                 button10.Image = Resource1.ic_volume_up_white_18pt_2x;
                 //function here
@@ -652,12 +671,21 @@ namespace versionB
 
         private void button12_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://localhost/phpmyadmin/sql.php?server=1&db=rfid&table=checkpoint&pos=0&token=ba4ca28d71e5d229ba74d02a152ae779");
+            try
+            {
+                System.Diagnostics.Process.Start("http://localhost/phpmyadmin/sql.php?server=1&db=rfid&table=checkpoint&pos=0&token=ba4ca28d71e5d229ba74d02a152ae779");
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please fill textboxs.");
+            }
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+            dataGridView1.Sort(dataGridView1.Columns[1], ListSortDirection.Ascending);
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -668,6 +696,50 @@ namespace versionB
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
 
+            if (textBox1.Text == "" || textBox2.Text == "") return;
+
+            try
+            {
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("([{0}] >= {1} AND [{0}] <= {2})", "bib", textBox1.Text, textBox2.Text);
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please fill textboxs.");
+            }
+           
+        }
+
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "" || textBox2.Text == "") return;
+            try
+            {
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("([{0}] >= {1} AND [{0}] <= {2})", "bib", textBox1.Text, textBox2.Text);
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please fill textboxs.");
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "" || textBox2.Text == "") return;
+            try
+            {
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("([{0}] >= {1} AND [{0}] <= {2})", "bib", textBox1.Text, textBox2.Text);
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please fill textboxs.");
+            }
         }
 
         private void UpdateAnt(string time)
@@ -742,6 +814,30 @@ namespace versionB
         {
             chart1.Series["Tag"].Points.AddXY(string.Format("{0}:{1}:{2}:{3}", DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond), countDB);
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            isReset = !isReset;
+            if (isReset)
+            {
+                //reset.Enabled = false;
+                table.Clear(); //old >dataGridView1.DataSource = new DataGridView();
+                //resetAnt();
+
+                //start.Enabled = false;
+
+                comboBaudrate.Enabled = true;
+                comboPort.Enabled = true;
+                //connectLAN.BackColor = Color.White;
+
+                //connectLAN.Enabled = true;
+                //status1.ForeColor = Color.Red;
+                //status1.Text = "Disconnected";
+                isReset = !isReset;
+
+            }
+        }
+
     }
     
 
