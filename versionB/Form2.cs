@@ -117,6 +117,7 @@ namespace versionB
             comboPort.SelectedIndex = 2;
             comboBaudrate.SelectedIndex = 1;
             comboANTport.SelectedIndex = 0;
+            //comboCheckpoint.SelectedIndex = 0;
 
             iSerialPort = new SerialPort();
             iSerialPort.DataReceived += new SerialDataReceivedEventHandler(ReceivedComData);
@@ -379,6 +380,7 @@ namespace versionB
         private void button6_Click(object sender, EventArgs e)//start button
         {
             //private bool start = false;
+
             if (comboCheckpoint.Text == null | comboCheckpoint.Text == "")
             {
 
@@ -400,7 +402,7 @@ namespace versionB
             {
                 start = false;
                 button6.Text = "START";
-                button6.BackColor = Color.FromArgb(33, 220, 82);
+                button6.BackColor = Color.FromArgb(35, 55, 85);
                 //start function here
                 string time = string.Format("{0}:{1}:{2}:{3}", DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second, DateTime.Now.Millisecond);
             }
@@ -534,6 +536,13 @@ namespace versionB
 
         private void buttonConnect_Click(object sender, EventArgs e)
         {
+            if (comboCheckpoint.Text == null | comboCheckpoint.Text == "")
+            {
+
+                MessageBox.Show("Choose CheckPoint,please");
+               
+                return;
+            }
             string strException = string.Empty;
             string strComPort = comboPort.Text;
             int nBaudrate = Convert.ToInt32(comboBaudrate.Text);
@@ -548,7 +557,7 @@ namespace versionB
             //Console.WriteLine(nRet+"");
 
 
-            if (strComPort == "COM15") nRet = 0;//ทดสอบที่com15
+           // if (strComPort == "COM15") nRet = 0;//ทดสอบที่com15
 
             if (nRet != 0)
             {
@@ -817,6 +826,11 @@ namespace versionB
 
         private void button8_Click(object sender, EventArgs e)
         {
+            if (start == true)
+            {
+                MessageBox.Show("Please you stop botton");
+                return;
+            }
             isReset = !isReset;
             if (isReset)
             {
@@ -825,19 +839,18 @@ namespace versionB
                 //resetAnt();
 
                 //start.Enabled = false;
-
+                //.
                 comboBaudrate.Enabled = true;
                 comboPort.Enabled = true;
-                //connectLAN.BackColor = Color.White;
-
-                //connectLAN.Enabled = true;
-                //status1.ForeColor = Color.Red;
-                //status1.Text = "Disconnected";
+                label11.ForeColor = Color.DarkGray;
+                label3.ForeColor = Color.DarkGray;
+                label11.Invoke(new Action(() => { label11.Text = "00:00:00:00"; }));
                 isReset = !isReset;
 
             }
         }
 
+        
     }
     
 

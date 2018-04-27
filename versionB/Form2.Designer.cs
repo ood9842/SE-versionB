@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Header = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.Work = new System.Windows.Forms.Panel();
-            this.Analyze = new System.Windows.Forms.Panel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Home = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -86,6 +86,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
+            this.Analyze = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Setting = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
@@ -114,16 +116,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.Header.SuspendLayout();
             this.Work.SuspendLayout();
-            this.Analyze.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.Home.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Analyze.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.Setting.SuspendLayout();
             this.Database.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -205,8 +205,8 @@
             // Work
             // 
             this.Work.Controls.Add(this.Home);
-            this.Work.Controls.Add(this.Analyze);
             this.Work.Controls.Add(this.Setting);
+            this.Work.Controls.Add(this.Analyze);
             this.Work.Controls.Add(this.Database);
             this.Work.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Work.Location = new System.Drawing.Point(0, 88);
@@ -214,40 +214,6 @@
             this.Work.Name = "Work";
             this.Work.Size = new System.Drawing.Size(1024, 592);
             this.Work.TabIndex = 1;
-            // 
-            // Analyze
-            // 
-            this.Analyze.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            this.Analyze.Controls.Add(this.chart1);
-            this.Analyze.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Analyze.Location = new System.Drawing.Point(0, 0);
-            this.Analyze.Margin = new System.Windows.Forms.Padding(0);
-            this.Analyze.Name = "Analyze";
-            this.Analyze.Size = new System.Drawing.Size(1024, 592);
-            this.Analyze.TabIndex = 3;
-            // 
-            // chart1
-            // 
-            this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            this.chart1.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.DashedUpwardDiagonal;
-            chartArea5.BackColor = System.Drawing.Color.White;
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
-            this.chart1.Location = new System.Drawing.Point(29, 61);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
-            series5.Legend = "Legend1";
-            series5.Name = "Tag";
-            this.chart1.Series.Add(series5);
-            this.chart1.Size = new System.Drawing.Size(677, 435);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
             // 
             // Home
             // 
@@ -305,6 +271,22 @@
             this.Home.Name = "Home";
             this.Home.Size = new System.Drawing.Size(1024, 592);
             this.Home.TabIndex = 1;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(602, 24);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(58, 20);
+            this.textBox2.TabIndex = 55;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(516, 24);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(58, 20);
+            this.textBox1.TabIndex = 54;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label47
             // 
@@ -594,7 +576,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.button6.Location = new System.Drawing.Point(56, 356);
+            this.button6.Location = new System.Drawing.Point(57, 349);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(162, 60);
             this.button6.TabIndex = 21;
@@ -826,6 +808,7 @@
             this.label3.Size = new System.Drawing.Size(53, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "ANT1";
+            
             // 
             // dataGridView1
             // 
@@ -847,6 +830,40 @@
             this.button5.TabIndex = 0;
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // Analyze
+            // 
+            this.Analyze.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            this.Analyze.Controls.Add(this.chart1);
+            this.Analyze.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Analyze.Location = new System.Drawing.Point(0, 0);
+            this.Analyze.Margin = new System.Windows.Forms.Padding(0);
+            this.Analyze.Name = "Analyze";
+            this.Analyze.Size = new System.Drawing.Size(1024, 592);
+            this.Analyze.TabIndex = 3;
+            // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            this.chart1.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.DashedUpwardDiagonal;
+            chartArea3.BackColor = System.Drawing.Color.White;
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
+            this.chart1.Location = new System.Drawing.Point(29, 61);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.LabelForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(52)))), ((int)(((byte)(67)))));
+            series3.Legend = "Legend1";
+            series3.Name = "Tag";
+            this.chart1.Series.Add(series3);
+            this.chart1.Size = new System.Drawing.Size(677, 435);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
             // 
             // Setting
             // 
@@ -1247,22 +1264,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(516, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(58, 20);
-            this.textBox1.TabIndex = 54;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(602, 24);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(58, 20);
-            this.textBox2.TabIndex = 55;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1278,11 +1279,11 @@
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
             this.Work.ResumeLayout(false);
-            this.Analyze.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.Home.ResumeLayout(false);
             this.Home.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Analyze.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.Setting.ResumeLayout(false);
             this.Setting.PerformLayout();
             this.Database.ResumeLayout(false);
